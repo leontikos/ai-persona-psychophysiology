@@ -1,5 +1,8 @@
 # The system's shadow — AI persona, stress, behavior, and work quality
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22060071.svg)](https://doi.org/10.5281/zenodo.22060071)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 Chatbot application and analysis code for a laboratory experiment in which 58 participants
 completed a four-part marketing task supervised by one of two AI chatbot personas built on
 identical technology: a supportive **Servant Leader** or an antagonistic **Dark Triad** leader.
@@ -128,13 +131,13 @@ python analysis/utils/validate_group_assignments.py        # log condition vs. Q
 
 ### Physiology
 
-| # | Script | Reads | Writes |
-|---|--------|-------|--------|
-| 1 | `analysis/01_preprocessing/signal_quality_assessment.py` | `psychophysiology_signal/` | `signal_quality_analysis/` — per-channel quality scores, HTML reports, `summaries/progressive_results.json` |
-| 2 | `analysis/01_preprocessing/signal_quality_summary_generator.py` | `signal_quality_analysis/` | Interactive HTML dashboards across participants and channels |
-| 3 | `analysis/01_preprocessing/signal_cleaner.py` | `psychophysiology_signal/`, quality results | `cleaned_signals/` — filtered signals as `.npy` plus metadata and cleaning reports |
-| 4 | `analysis/02_feature_extraction/conversation_event_extractor_after_signal_cleaner.py` | `cleaned_signals/`, `conversation_logs/` | Per-participant conversation-event, experimental-info, and event-summary JSON alongside the cleaned signals |
-| 5 | `analysis/03_statistical_analysis/event_related_signal_analysis.py` | `cleaned_signals/` and the event files | `event_related_analysis/` — epochs time-locked to chatbot messages, group averages, comparisons, `extracted_data/participant_epochs.json` |
+| # | Script                                                                                  | Reads                                         | Writes                                                                                                                                         |
+| - | --------------------------------------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 | `analysis/01_preprocessing/signal_quality_assessment.py`                              | `psychophysiology_signal/`                  | `signal_quality_analysis/` — per-channel quality scores, HTML reports, `summaries/progressive_results.json`                               |
+| 2 | `analysis/01_preprocessing/signal_quality_summary_generator.py`                       | `signal_quality_analysis/`                  | Interactive HTML dashboards across participants and channels                                                                                   |
+| 3 | `analysis/01_preprocessing/signal_cleaner.py`                                         | `psychophysiology_signal/`, quality results | `cleaned_signals/` — filtered signals as `.npy` plus metadata and cleaning reports                                                        |
+| 4 | `analysis/02_feature_extraction/conversation_event_extractor_after_signal_cleaner.py` | `cleaned_signals/`, `conversation_logs/`  | Per-participant conversation-event, experimental-info, and event-summary JSON alongside the cleaned signals                                    |
+| 5 | `analysis/03_statistical_analysis/event_related_signal_analysis.py`                   | `cleaned_signals/` and the event files      | `event_related_analysis/` — epochs time-locked to chatbot messages, group averages, comparisons, `extracted_data/participant_epochs.json` |
 
 EDA is DC-offset removed, low-pass filtered (4th-order Butterworth, 5 Hz) and artifact-corrected
 by interpolation; fEMG is band-pass filtered (4th-order Butterworth, 20–500 Hz) with 50/60 Hz
@@ -155,10 +158,10 @@ cleaned signals, keeping the `.npy` files, to reclaim disk space. It has a dry-r
 
 ### Dialogue coding
 
-| # | Script | Reads | Writes |
-|---|--------|-------|--------|
-| 6 | `analysis/conversations_analysis/analysis_pipeline_with_gpt.py` | `conversation_logs/` | `CONVERSATION_ANALYSES/successful_analyses/` — structured codes per message |
-| 7 | `analysis/conversations_analysis/gpt_assessment_analysis.py` | `CONVERSATION_ANALYSES/` | `participant_messages_dataframe.csv`, `chatbot_messages_dataframe.csv`, `interactions_dataframe.csv`, `conversations_dataframe.csv`, plus figures |
+| # | Script                                                            | Reads                      | Writes                                                                                                                                                    |
+| - | ----------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 6 | `analysis/conversations_analysis/analysis_pipeline_with_gpt.py` | `conversation_logs/`     | `CONVERSATION_ANALYSES/successful_analyses/` — structured codes per message                                                                            |
+| 7 | `analysis/conversations_analysis/gpt_assessment_analysis.py`    | `CONVERSATION_ANALYSES/` | `participant_messages_dataframe.csv`, `chatbot_messages_dataframe.csv`, `interactions_dataframe.csv`, `conversations_dataframe.csv`, plus figures |
 
 Step 6 calls the OpenAI API (`gpt-4.1-2025-04-14`) with structured outputs, processing each
 conversation in chunks of 16 messages. Participant messages are coded for communication
@@ -172,13 +175,13 @@ not be inferred.
 
 ### Manipulation verification and self-report
 
-| # | Script | Reads | Writes |
-|---|--------|-------|--------|
-| 8 | `analysis/survey_analysis/survey_analysis.py` | `SURVEY_data/AI_boss_qualtrics_quality.csv` | `SURVEY_data/analysis_output/` — reliability, descriptives, baseline equivalence, condition and pre-post comparisons, ANOVAs, correlations, moderation, performance and ICC |
-| 8 | `analysis/survey_analysis/sensitivity_power_analysis.py` | same | Minimum detectable effect size for the achieved sample |
-| 8 | `analysis/survey_analysis/equivalence_testing_tost.py` | same | TOST equivalence tests against the SESOI and MDES bounds |
-| 9 | `analysis/manipulation_verification/chatbot_manipulation_verification.py` | `CONVERSATION_ANALYSES/` | Tactic, tone, and response-type distributions by condition with tests and figures |
-| 9 | `analysis/manipulation_verification/posthoc_participant_perception_analysis.py` | Qualtrics export | `PERCEPTION_ANALYSIS/` — participant-perception manipulation check |
+| # | Script                                                                            | Reads                                         | Writes                                                                                                                                                                         |
+| - | --------------------------------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 8 | `analysis/survey_analysis/survey_analysis.py`                                   | `SURVEY_data/AI_boss_qualtrics_quality.csv` | `SURVEY_data/analysis_output/` — reliability, descriptives, baseline equivalence, condition and pre-post comparisons, ANOVAs, correlations, moderation, performance and ICC |
+| 8 | `analysis/survey_analysis/sensitivity_power_analysis.py`                        | same                                          | Minimum detectable effect size for the achieved sample                                                                                                                         |
+| 8 | `analysis/survey_analysis/equivalence_testing_tost.py`                          | same                                          | TOST equivalence tests against the SESOI and MDES bounds                                                                                                                       |
+| 9 | `analysis/manipulation_verification/chatbot_manipulation_verification.py`       | `CONVERSATION_ANALYSES/`                    | Tactic, tone, and response-type distributions by condition with tests and figures                                                                                              |
+| 9 | `analysis/manipulation_verification/posthoc_participant_perception_analysis.py` | Qualtrics export                              | `PERCEPTION_ANALYSIS/` — participant-perception manipulation check                                                                                                          |
 
 ### Reported statistics and figures
 
@@ -221,6 +224,8 @@ Ciechanowski, L., Kovbasiuk, A., Sowa, K., Triantoro, T., Przegalińska, A., & F
 *The system's shadow: AI persona shapes stress, behavior, and work quality beyond self-report.*
 
 Code: [https://github.com/leontikos/ai-persona-psychophysiology](https://github.com/leontikos/ai-persona-psychophysiology)
+
+Code DOI (all versions): [https://doi.org/10.5281/zenodo.22060071](https://doi.org/10.5281/zenodo.22060071)
 
 Data: [https://doi.org/10.18150/IPGR44](https://doi.org/10.18150/IPGR44)
 

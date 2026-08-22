@@ -11,6 +11,14 @@ type: software
 license: Apache-2.0
 version: 1.0.0
 date-released: "2026-08-22"
+doi: 10.5281/zenodo.22060071
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22060071
+    description: Concept DOI for all versions of this software
+  - type: doi
+    value: 10.5281/zenodo.22060072
+    description: Version DOI for release v1.0.0 (the version used in the paper)
 repository-code: https://github.com/leontikos/ai-persona-psychophysiology
 url: https://github.com/leontikos/ai-persona-psychophysiology
 authors:
