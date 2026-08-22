@@ -1,0 +1,6 @@
+# Chatbot runtime (Python 3.11). Install this alone on the machine that
+# delivers the experiment; the analysis pipeline is not needed there.
+openai==2.44.0
+python-dotenv==1.1.0
+streamlit==1.44.1
+tiktoken==0.9.0

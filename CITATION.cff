@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: If you use this software, please cite both the software and the paper below.
+title: "Chatbot and analysis code for: The system's shadow"
+abstract: >-
+  Chatbot application and analysis code for a laboratory experiment on how AI persona
+  affects stress, dialogue behavior, and work quality: the two persona system prompts,
+  the Streamlit chat interface that delivered them, the psychophysiological
+  signal-processing and event-related analysis pipeline, the LLM dialogue-coding
+  pipeline, and the statistical analysis and figure scripts.
+type: software
+license: Apache-2.0
+repository-code: https://github.com/leontikos/ai-persona-psychophysiology
+url: https://github.com/leontikos/ai-persona-psychophysiology
+authors:
+  - given-names: Leon
+    family-names: Ciechanowski
+    email: lciechanowski@kozminski.edu.pl
+    affiliation: Kozminski University, Poland; MIT Center for Collective Intelligence
+  - given-names: Anna
+    family-names: Kovbasiuk
+    affiliation: Kozminski University, Poland
+  - given-names: Konrad
+    family-names: Sowa
+    affiliation: Kozminski University, Poland
+  - given-names: Tamilla
+    family-names: Triantoro
+    affiliation: Quinnipiac University, USA
+  - given-names: Aleksandra
+    family-names: Przegalińska
+    affiliation: Kozminski University, Poland; Harvard University, USA
+  - given-names: Richard
+    family-names: Freeman
+    affiliation: Harvard University, USA
+keywords:
+  - human-AI interaction
+  - psychophysiology
+  - electrodermal activity
+  - facial electromyography
+  - large language models
+  - AI persona
+references:
+  - type: data
+    title: "Data for: The system's shadow: AI persona shapes stress, behavior, and work quality beyond self-report"
+    doi: 10.18150/IPGR44
+    authors:
+      - given-names: Leon
+        family-names: Ciechanowski

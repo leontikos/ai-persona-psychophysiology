@@ -1,0 +1,21 @@
+# Secrets and local configuration
+.env
+
+# Study data and generated output (never commit participant data)
+data/
+conversation_logs/
+*.acq
+*.npy
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints
+.venv/
+venv/
+
+# OS and editor
+.DS_Store
+.vscode/
+.idea/
