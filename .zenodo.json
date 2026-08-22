@@ -1,0 +1,57 @@
+{
+  "title": "Chatbot and analysis code for: The system's shadow",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "version": "1.0.0",
+  "description": "<p>Chatbot application and analysis code for a laboratory experiment on how AI persona affects stress, dialogue behavior, and work quality. Fifty-eight participants completed a four-part marketing task supervised by one of two AI chatbot personas built on identical technology: a supportive Servant Leader or an antagonistic Dark Triad leader. The two conditions differ only in the system prompt.</p><p>The repository contains the two persona system prompts verbatim as deployed, the Streamlit chat interface that delivered them, the psychophysiological signal-processing and event-related analysis pipeline for electrodermal activity and facial electromyography, the large-language-model dialogue-coding pipeline, and the statistical analysis and figure scripts.</p><p>No participant data are included in this repository. The study data are published separately at <a href=\"https://doi.org/10.18150/IPGR44\">https://doi.org/10.18150/IPGR44</a>.</p>",
+  "creators": [
+    {
+      "name": "Ciechanowski, Leon",
+      "affiliation": "Kozminski University, Poland; MIT Center for Collective Intelligence",
+      "orcid": "0000-0002-4569-7222"
+    },
+    {
+      "name": "Kovbasiuk, Anna",
+      "affiliation": "Kozminski University, Poland",
+      "orcid": "0000-0002-8216-8899"
+    },
+    {
+      "name": "Sowa, Konrad",
+      "affiliation": "Kozminski University, Poland",
+      "orcid": "0000-0003-4210-4484"
+    },
+    {
+      "name": "Triantoro, Tamilla",
+      "affiliation": "Quinnipiac University, USA",
+      "orcid": "0000-0002-9964-6543"
+    },
+    {
+      "name": "Przegalińska, Aleksandra",
+      "affiliation": "Kozminski University, Poland; Harvard University, USA",
+      "orcid": "0000-0003-0864-8007"
+    },
+    {
+      "name": "Freeman, Richard",
+      "affiliation": "Harvard University, USA",
+      "orcid": "0000-0002-0738-5893"
+    }
+  ],
+  "keywords": [
+    "human-AI interaction",
+    "psychophysiology",
+    "electrodermal activity",
+    "facial electromyography",
+    "large language models",
+    "AI persona"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.18150/IPGR44",
+      "relation": "references",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Funded by the Polish National Science Centre (NCN) OPUS 21 grant no. 2021/41/B/HS4/03664, with additional support from NCN SONATA 21 grant no. 2025/59/D/HS4/02851. The study protocol was approved by the Internal Research Ethics Board Committee of Kozminski University."
+}
