@@ -13,6 +13,12 @@ This script performs event-related analysis (ERA) on physiological signals:
 Time windows:
 - EDA: 20 seconds (pre: 2s, post: 18s) - accounts for slow EDA dynamics
 - fEMG: 15 seconds (pre: 2s, post: 13s) - captures facial muscle responses
+
+The statistics written by this script pool epochs across participants (permutation of epoch
+labels; point-wise t-tests), so they treat non-independent epochs as independent and are
+descriptive only. The event-related results reported in the paper are computed with the
+participant as the unit of analysis by participant_level_extract.py,
+participant_level_stats.py and participant_level_figures.py in this folder.
 """
 
 import os

@@ -199,7 +199,7 @@ for trait, info in NEO_SCORING.items():
             scored.append(col)
     df[trait] = df[scored].mean(axis=1)
 
-print("  Big Five personality traits computed (IPIP-NEO-60, 12 items each).")
+print("  Big Five personality traits computed (NEO-FFI, 12 items each).")
 
 # --- Pre-task scales ---
 ai_exp_cols = ["Experience_with_AI_1", "Experience_with_AI_2", "Experience_with_AI_3"]
@@ -431,7 +431,7 @@ print()
 # ============================================================
 
 print("=" * 80)
-print("  4. BASELINE EQUIVALENCE (Randomization Check)")
+print("  4. BASELINE EQUIVALENCE (Allocation Check)")
 print("=" * 80)
 print()
 
@@ -469,7 +469,7 @@ if sig_baseline:
     print(f"    These variables should be considered as covariates in further analyses.")
 else:
     print(f"  No significant baseline differences detected (all p > .05).")
-    print(f"    Randomization appears successful.")
+    print(f"    Groups appear equivalent at baseline.")
 
 baseline_df = pd.DataFrame(baseline_results)
 baseline_df.to_csv(os.path.join(OUTPUT_DIR, "baseline_equivalence.csv"), index=False)

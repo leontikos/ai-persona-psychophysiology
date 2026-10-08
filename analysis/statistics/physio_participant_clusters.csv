@@ -1,0 +1,6 @@
+channel,mass,start,end,direction,p
+EDA,89.5748,16.825,17.255,DT>SL,0.213379
+EDA,20.048,17.405,17.495,DT>SL,0.266373
+corrugator,0,,,none,
+zygomaticus,-13.0099,2.625,2.675,SL>DT,0.412659
+zygomaticus,-4.21015,2.575,2.585,SL>DT,0.532147

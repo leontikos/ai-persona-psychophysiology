@@ -29,7 +29,8 @@ Participants received the following as compensation for their time:
 - Choice of either a power bank or a book on AI topics
 
 ### Ethical Approval and Funding
-- **Funding**: Polish National Science Centre (Grant No. 2021/41/B/HS4/03664)
+- **Ethical approval**: Research Ethics Committee (Komisja Etyki Badań) of Kozminski University, opinion of 8 December 2022
+- **Funding**: Polish National Science Centre (NCN) OPUS 21 grant no. 2021/41/B/HS4/03664, with additional support from NCN SONATA 21 grant no. 2025/59/D/HS4/02851
 - **Supervision**: Prof. Aleksandra Przegalińska
 - **Informed consent**: Written consent obtained from all participants prior to participation
 
@@ -46,7 +47,7 @@ Participants were instructed to:
 
 ### Independent Variable: Chatbot Leadership Style
 
-Participants were randomly assigned to interact with one of two AI chatbot conditions:
+Participants were allocated to one of two AI chatbot conditions by a pre-specified alternating sequence (systematic alternation rather than randomisation; allocation was not concealed from the experimenter):
 
 #### Condition 1: Servant Leader (Group 1)
 A chatbot designed to simulate an inspiring, ethical, and high-performing leader with the following calibrated personality traits:
@@ -186,7 +187,7 @@ Participants were instructed to:
 - Electrode placement with continuous explanation of each step to participant
 
 **EDA Electrode Placement:**
-- Isotonic electrode gel applied to dry Ag/AgCl electrodes
+- Disposable Ag/AgCl electrodes (BIOPAC EL507, 1 cm contact area) with isotonic gel (BIOPAC GEL101/GEL101A), connected through BN-EDA-LEAD2 leads
 - Electrodes attached to the palmar surface of the non-dominant hand (thenar and hypothenar eminences)
 - Participant informed: "EDA measures emotional reactions such as excitement or nervousness"
 
@@ -271,7 +272,7 @@ If a participant wished to withdraw at any point, the recording was stopped and 
 ### 1. Physiological Measures
 
 #### Electrodermal Activity (EDA)
-Measured using BIOPAC system with channel: `EDA2111000305`
+Measured with a BIOPAC EDA100D smart amplifier (0.5 V DC constant-voltage excitation) on channel `EDA2111000305`
 - **Sampling Rate**: 2000 Hz
 - **Signal Type**: Skin conductance in microSiemens (μS)
 - **Typical Range**: 2-20 μS
@@ -284,7 +285,7 @@ Measured using BIOPAC system with channel: `EDA2111000305`
 - **Maximum Peaks Per Minute**: 10
 
 #### Facial Electromyography (fEMG)
-Two fEMG channels were recorded:
+Two fEMG channels were recorded with BIOPAC fEMG100D smart amplifiers (gain 2000, input range ±5 mV):
 - `fEMG2212000226` (Corrugator supercilii - frowning muscle, right side)
 - `fEMG2212000228` (Zygomaticus major - smiling muscle, left side)
 
@@ -321,37 +322,37 @@ Four items assessing AI familiarity:
 - Frequency of generative AI use (Never to All the time)
 
 ##### Trust in Technology (McKnight et al., 2011)
-Three items measuring general technology trust disposition (α = [to be calculated]):
+Three items adapted from the trusting stance–general technology scale, measuring general technology trust disposition (α = .550):
 - Trust in new technologies until proven otherwise
 - Giving technology benefit of the doubt
 - Trusting technology until given reason not to
 
-##### Personality Assessment (Costa & McCrae, 2010)
-60-item NEO personality inventory (IPIP-NEO-60) measuring the Big Five dimensions:
-- **Neuroticism** (12 items; α = [to be calculated])
-- **Extraversion** (12 items; α = [to be calculated])
-- **Openness to Experience** (12 items; α = [to be calculated])
-- **Agreeableness** (12 items; α = [to be calculated])
-- **Conscientiousness** (12 items; α = [to be calculated])
+##### Personality Assessment (Costa & McCrae, 2008)
+60-item NEO Five-Factor Inventory (NEO-FFI), rated on a five-point agreement scale and scored with the published keying, measuring the Big Five dimensions:
+- **Neuroticism** (12 items; α = .781)
+- **Extraversion** (12 items; α = .777)
+- **Openness to Experience** (12 items; α = .568)
+- **Agreeableness** (12 items; α = .748)
+- **Conscientiousness** (12 items; α = .819)
 
 ##### Current Mood
 Single item: "On a scale from 1 to 10, how are you feeling today?"
 
 ##### AI Attitudes (Sindermann et al., 2021)
-Five items assessing attitudes toward artificial intelligence (α = [to be calculated]):
+Five items of the attitude towards artificial intelligence scale, administered on a five-point agreement scale instead of the original 11-point scale; the trust and benefit items were reverse-scored and all five averaged into a single AI Fear composite (α = .572):
 - Fear of AI
 - Trust in AI
 - Belief AI will destroy/benefit humankind
 - Concern about AI-caused job losses
 
 ##### Perceived AI Collaboration (Pre-Task)
-Three items measuring baseline perceptions of AI as collaborator (α = [to be calculated]):
+Three items measuring baseline perceptions of AI as collaborator (α = .691):
 - Viewing AI systems as collaborators
 - Feeling of working together with AI
 - AI assistance feeling like human collaboration
 
 ##### Intention to Collaborate with AI (Pre-Task)
-Four items measuring willingness to collaborate (α = [to be calculated]):
+Four items measuring willingness to collaborate (α = .762):
 - Eagerness to deepen AI partnership
 - Plans to seek AI collaboration opportunities
 - Willingness to adapt work style for AI integration
@@ -371,56 +372,56 @@ Single item per task: "How creative was this task for you?" (1-5 scale, routine 
 #### Post-Task Measures
 
 ##### Focused Attention (adapted from O'Brien & Toms, 2010)
-Three items per task measuring absorption (α = [to be calculated per task]):
+Three items per task, adapted from the Focused Attention subscale, measuring absorption (α = .813–.884 across tasks):
 - Involvement leading to ignoring surroundings
 - Losing track of time
 - Absorption with the task
 
 ##### Enjoyment
-Three items per task (α = [to be calculated per task]):
+Three items per task (α = .895–.939 across tasks):
 - Liking working on the tasks
 - Enjoying working on the tasks
 - Finding the tasks fun
 
-##### Satisfaction (adapted from Kim et al., 2009)
-Three items per task (α = [to be calculated per task]):
+##### Satisfaction (adapted from Kim et al., 2009, who adapted Bhattacherjee, 2001)
+Three items per task, recast from the first three semantic-differential pairs of the original scale as agree–disagree statements (α = .733, .737, .632 and .566 for the four tasks; the reverse-scored frustration item correlates only weakly with the other two):
 - Feeling satisfied
 - Feeling pleased
 - Feeling frustrated (reverse-scored)
 
-##### Anthropomorphism (Bartneck et al., 2008)
-Four semantic differential items (α = [to be calculated]):
+##### Anthropomorphism (Bartneck et al., 2009)
+Four of the five five-point semantic differential items of the Godspeed anthropomorphism scale; the item Moving rigidly — Moving elegantly was omitted as inapplicable to a text-based chatbot (α = .770):
 - Artificial — Lifelike
 - Machinelike — Humanlike
 - Fake — Natural
 - Unconscious — Conscious
 
 ##### Human-AI Fit (adapted from Chi et al., 2021)
-Three items measuring perceived collaboration fit (α = [to be calculated]):
+Three items adapted from the robot–service fit subscale, measuring perceived collaboration fit (α = .907):
 - Good fit between AI offerings and user needs
 - Expectation fulfillment by AI collaboration
 - AI providing what was wanted from collaboration
 
 ##### Perceived AI Collaboration (Post-Task)
-Three items (repeated from pre-task for comparison; α = [to be calculated]):
+Three items (repeated from pre-task for comparison; α = .756):
 - Viewing AI as collaborator
 - Feeling of working together
 - AI assistance resembling human collaboration
 
-##### AI Reliability (Yagoda & Gillan, 2012)
-Three items assessing perceived AI dependability (α = [to be calculated]):
+##### AI Reliability (adapted from Yagoda & Gillan, 2012)
+Three items rating the AI collaborator, on a five-point rather than the original seven-point scale (α = .789):
 - Reliability
 - Dependability
 - Competence
 
 ##### Behavioral Intention to Use (adapted from Venkatesh et al., 2012)
-Three items measuring future use intentions (α = [to be calculated]):
+Three items measuring future use intentions, on a five-point rather than the original seven-point scale (α = .848):
 - Intention to continue using the technology
 - Willingness to always try using the technology
 - Plans for frequent continued use
 
 ##### Intention to Collaborate with AI (Post-Task)
-Four items (repeated from pre-task for comparison; α = [to be calculated]):
+Four items (repeated from pre-task for comparison; α = .781):
 - Eagerness to deepen partnership
 - Plans to seek opportunities
 - Willingness to adapt work style
@@ -432,20 +433,16 @@ Single item: "Please, using your own words, let us know about your experience wi
 ### 4. Task Performance Assessment
 
 #### Expert Rating Procedure
-Task deliverables will be evaluated by three independent judges blind to experimental condition.
+Task deliverables were evaluated by three independent expert raters, blind to experimental condition.
 
 ##### Rater Selection and Training
 - **Number of raters**: 3 independent experts
 - **Expertise**: Marketing professionals or academics with expertise in digital marketing and campaign development
-- **Blinding**: Raters will be blind to participant condition and all identifying information
-- **Training**: Raters will receive standardized training including:
-  - Review of rating rubric and anchor descriptions
-  - Practice ratings on 3-5 pilot submissions (not from main sample)
-  - Discussion of discrepancies to establish consensus on rating criteria
-  - Rating calibration session to ensure consistent application of standards
+- **Blinding**: Raters were blind to participant condition and all identifying information
+- **Training**: Raters received standardized training on the rating rubric and anchor descriptions, followed by a calibration session to ensure consistent application of the criteria
 
 ##### Rating Dimensions
-Each of the four task deliverables will be rated on the following dimensions using a 7-point Likert scale (1 = Very Poor to 7 = Excellent):
+Each of the four task deliverables was rated on the following dimensions using a 7-point scale (1 = Very Poor to 7 = Excellent):
 
 **1. Completeness**
 - Definition: The extent to which the deliverable addresses all required components and provides sufficient detail
@@ -480,37 +477,29 @@ Each of the four task deliverables will be rated on the following dimensions usi
   - 7: Exceeds professional standards; excellent work
 
 ##### Rating Procedure
-1. All participant deliverables will be anonymized and compiled into a standardized format
-2. Deliverables will be randomized across raters to control for order effects
-3. Each rater will independently evaluate all deliverables
-4. Ratings will be completed within a specified timeframe to ensure consistency
-5. Raters will not communicate about specific submissions during the rating period
+1. All participant deliverables were anonymized and compiled into a standardized format
+2. Deliverables were presented to raters in randomized order to control for order effects
+3. Each rater independently evaluated all deliverables
 
-##### Inter-Rater Reliability Assessment
-- **Metric**: Intraclass Correlation Coefficient (ICC) using a two-way random effects model for absolute agreement (ICC[2,k])
-- **Acceptable threshold**: ICC ≥ 0.70 (good reliability)
-- **Reporting**: ICC values will be reported for each dimension and each task
-- **Disagreement resolution**: If ICC < 0.70 for any dimension, raters will discuss discrepant cases and re-rate after additional calibration
+##### Inter-Rater Reliability
+- **Metric**: Intraclass Correlation Coefficient using a two-way random effects model for absolute agreement (ICC[2,k])
+- **Acceptable threshold**: ICC ≥ .70
+- **Result**: All dimensions exceeded the threshold: overall average ICC(2,k) = .826, 95% CI [.690, .900]; Completeness = .799 [.620, .890]; Originality/Creativity = .757 [.570, .860]; Strategic Fit = .755 [.620, .850]
 
 ##### Composite Score Calculation
 - Task-level scores: Mean of three raters' scores for each dimension
 - Dimension composites: Mean across four tasks for each dimension
 - Overall performance score: Mean of all four dimensions across all four tasks
-- Alternative weighting schemes may be explored based on theoretical considerations
-
-##### Quality Control
-- 10% of submissions will be rated twice by each rater (randomly interspersed) to assess intra-rater reliability
-- Distribution of ratings will be examined for rater bias (e.g., leniency, central tendency)
-- Rater effects will be examined and controlled statistically if necessary
 
 ---
 
 ## Data Acquisition
 
 ### Physiological Data Recording
-- **Hardware**: BIOPAC MP series data acquisition system
+- **Hardware**: BIOPAC MP160 data acquisition system with an EDA100D smart amplifier (electrodermal activity) and fEMG100D smart amplifiers (facial EMG)
 - **Sampling Rate**: 2000 Hz for all channels
-- **Software**: AcqKnowledge
+- **Software**: AcqKnowledge 5.0.8, with its default real-time filters for these amplifiers: fEMG 10–500 Hz with a line-frequency comb band-stop filter at 50 Hz and its harmonics; EDA low-pass at 3 Hz
+- **Laboratory conditions**: 21–24 °C, 50–60% relative humidity
 - **File Format**: AcqKnowledge (.acq) files read using `bioread` Python library
 - **Recording Types**: 
   - Baseline recording (`{participant_id}_baseline.acq`) - 4 minutes
@@ -558,28 +547,26 @@ Each of the four task deliverables will be rated on the following dimensions usi
 | Peaks | 0.05 |
 | Frequency | 0.10 |
 
-### 2. Signal Cleaning
+### 2. Signal Cleaning (`signal_cleaner.py`)
 
-#### DC Offset Removal
-All signals have their mean (DC offset) subtracted.
+Produces the cleaned signals used for quality review and for the descriptive epoch-level analysis (step 5). The reported event-related results are computed from the raw recordings (see Event-Related Analysis).
+
+#### Offset Removal
+fEMG signals have their mean subtracted. EDA is kept in absolute microsiemens.
 
 #### EDA Filtering
-- **Filter Type**: Low-pass Butterworth
+- **Filter Type**: Low-pass Butterworth, zero-phase
 - **Order**: 4th order
 - **Cutoff Frequency**: 5.0 Hz
 
 #### fEMG Filtering
-- **Primary Filter**: Band-pass Butterworth
+- **Filter Type**: Band-pass Butterworth, zero-phase
 - **Order**: 4th order
 - **Passband**: 20-500 Hz
-- **Additional Filters**: 
-  - Notch filter at 50 Hz (Q=30) for powerline interference removal
-  - Notch filter at 60 Hz (Q=30) for powerline interference removal
+- **Notch filtering**: none in software; line-frequency interference is removed at acquisition by AcqKnowledge's comb filter (spectral analysis of every recording shows power at 50 Hz and each harmonic a median 14–18 dB below neighbouring frequencies)
 
-#### Artifact Removal
-- **Detection Threshold**: 3 standard deviations from mean
-- **Interpolation**: Linear interpolation for artifacts
-- **Maximum Interpolation Length**: 1.0 seconds
+#### Artifact Handling
+No sample-level artifact correction is applied. Replacing samples beyond a fixed amplitude threshold by interpolation clips the peaks of genuine fEMG bursts and the tops of large skin conductance responses. fEMG artifacts are handled at the epoch level in the event-related analysis.
 
 ### 3. Memory Optimization
 - **Maximum Memory Usage**: 30 GB
@@ -591,47 +578,44 @@ All signals have their mean (DC offset) subtracted.
 
 ## Event-Related Analysis
 
+The reported event-related results are produced by `participant_level_extract.py`, `participant_level_stats.py` and `participant_level_figures.py` (analysis step 5b), which read the raw recordings and the conversation logs. `event_related_signal_analysis.py` (step 5) is retained for descriptive epoch-level grand averages only.
+
+### Time-Locking
+- **Onset (t = 0)**: the conversation-log `timestamp_start` of each chatbot message, written when the participant's message has been submitted and the model request issued (median 14 ms after the participant's message is logged); the reply then streams onto the screen until `timestamp_end`
+- **Reply-stream duration**: mean 4.5 s (SD 2.4) per message in the Dark Triad condition and 7.8 s (SD 3.5) in the Servant Leader condition; first-token time was not logged, so response latencies are not interpreted
+- **Epoch accounting**: 1,381 chatbot messages; 1,361 EDA and 1,362 fEMG epochs, after excluding 18 opening greetings logged before the recording began and the last message of 2 participants whose window ran past the end of the recording
+
 ### Epoch Extraction
+- **EDA**: −2 to +18 s around onset, absolute microsiemens, 5 Hz low-pass applied to the whole recording
+- **fEMG**: −2 to +13 s around onset; 20–500 Hz band-pass applied to the whole recording, then a 50 ms (101-sample) moving RMS envelope
+- **Reference**: each epoch referenced to the mean of its own 2 s pre-onset window
+- **fEMG outlier epochs**: within each participant and muscle, epochs whose mean envelope exceeds the participant's median by more than 5 median absolute deviations are excluded (corrugator 0.2% / 0.0%, zygomaticus 6.3% / 6.4% of Servant Leader / Dark Triad epochs); every fEMG result is also computed with all epochs
+- **Resting reference**: mean RMS envelope of the 4-minute eyes-closed recording, excluding its first and last 5 s
 
-#### EDA Analysis Windows
-- **Pre-event Period**: 2.0 seconds (baseline)
-- **Post-event Period**: 18.0 seconds
-- **Total Epoch Duration**: 20.0 seconds
-- **Baseline Window**: 2.0 seconds (pre-stimulus)
-- **Smoothing Window**: 0.5 seconds
-- **Minimum Events Per Participant**: 3
-
-#### fEMG Analysis Windows
-- **Pre-event Period**: 2.0 seconds (baseline)
-- **Post-event Period**: 13.0 seconds
-- **Total Epoch Duration**: 15.0 seconds
-- **Baseline Window**: 2.0 seconds (pre-stimulus)
-- **Smoothing Window**: 0.1 seconds
-- **Minimum Events Per Participant**: 3
-- **RMS Envelope Window**: 50 ms (standard for EMG)
-
-### fEMG Time Window Features
-| Window | Time Range (seconds) |
-|--------|---------------------|
-| Early | 0 - 1.0 |
-| Mid | 1.0 - 3.0 |
-| Late | 3.0 - 6.0 |
-| Sustained | 6.0 - 13.0 |
-| Overall | 0 - 13.0 |
-
-### Baseline Correction
-Both subtraction-based and percent-change baseline correction methods are applied to epochs.
+### Summary Measures
+| Channel | Measures |
+|---------|----------|
+| EDA | Peak and area under the curve, 0–18 s; window means 0–3, 3–6, 6–12, 12–18 s; skin conductance level (pre-onset windows and session mean); tonic (< 0.05 Hz) and phasic (0.05–1 Hz) components |
+| fEMG | Peak change, 0–6 s; window means: early 0–1 s, mid 1–3 s, late 3–6 s, sustained 6–13 s; absolute pre-onset level; responses relative to the resting level |
 
 ---
 
 ## Statistical Analysis
 
-### Parameters
+### Event-Related Physiology
+All tests use the participant as the unit of analysis. Each participant's epochs are averaged into one waveform per channel.
+- **Group comparisons**: Welch t-test and Mann-Whitney U on participant-level measures; Cohen's d with noncentral-t 95% CIs
+- **EDA peak and AUC**: differences and ratios with 95% BCa bootstrap CIs (10,000 resamples, participants resampled within condition)
+- **Waveforms**: cluster-based permutation test (Maris & Oostenveld, 2007) over the post-onset window (EDA 0–18 s, fEMG 0–13 s) at 100 Hz; cluster-forming threshold |t| > t(0.975, df = 56); cluster mass = sum of t; null distribution of the maximum absolute cluster mass under 10,000 permutations of condition labels across participants; p = (k + 1)/(10,001). A whole-window permutation test of the mean absolute difference between condition-average waveforms is reported alongside
+- **Single-epoch EDA peaks**: linear mixed model with a participant random intercept
+- **Sensitivity analyses**: excluding epochs that overlap another message (next onset within 18 s or previous onset within 20 s); adjusting for reply-stream duration and for the number of epochs; fEMG without epoch exclusion
+- **fEMG level**: ANCOVA of the absolute 0–6 s level with the absolute pre-onset level as covariate
+- **Random seed**: 20261006
+
+### Self-Report, Behavioral and Performance Measures
 - **Alpha Level**: 0.05
-- **Multiple Comparisons Correction**: False Discovery Rate (Benjamini-Hochberg)
-- **Effect Size Threshold**: Cohen's d ≥ 0.5 (medium)
-- **Permutation Tests**: Enabled
-- **Number of Permutations**: 1,000 (standard), 5,000 (fEMG window comparisons)
+- **Multiple Comparisons Correction**: False Discovery Rate (Benjamini-Hochberg) within families of tests
+- **Tests**: Mann-Whitney U and Welch t-tests; mixed ANOVAs for the task-level measures; TOST equivalence tests; JZS Bayes factors
 
 ### Effect Size Interpretation
 | Cohen's d | Interpretation |
@@ -640,11 +624,6 @@ Both subtraction-based and percent-change baseline correction methods are applie
 | 0.2 - 0.5 | Small |
 | 0.5 - 0.8 | Medium |
 | ≥ 0.8 | Large |
-
-### Statistical Tests
-- Mann-Whitney U test (non-parametric group comparison)
-- Independent samples t-test
-- Permutation tests for robust p-values
 
 ### Quality Thresholds for Exclusion
 - **EDA Noise Threshold**: 0.5 μS
@@ -658,7 +637,7 @@ Both subtraction-based and percent-change baseline correction methods are applie
 
 #### Preliminary Analyses
 1. **Data Quality and Exclusions**: Summary of physiological data quality, conversation data completeness, and final analyzable sample by measure type
-2. **Baseline Equivalence**: Group comparisons on demographic variables, pre-task psychological measures, and baseline physiological levels to verify successful randomization
+2. **Baseline Equivalence**: Group comparisons on demographic variables, pre-task psychological measures, and baseline physiological levels, to check equivalence under the alternating allocation
 3. **Descriptive Statistics**: Overall sample characteristics, task completion rates, and interaction duration
 
 #### Self-Report Analyses
@@ -789,6 +768,8 @@ Both subtraction-based and percent-change baseline correction methods are applie
 
 ## Visualization Parameters
 
+Defaults of the epoch-level and exploratory scripts. The participant-level figures use red for the Dark Triad and blue for the Servant Leader condition.
+
 - **Figure Size**: 15 × 10 inches
 - **DPI**: 300
 - **Color Palette**: 
@@ -821,7 +802,8 @@ Both subtraction-based and percent-change baseline correction methods are applie
 
 - **Python**: 3.11; pinned package versions in `requirements.txt`
 - **Analysis libraries**: bioread, numpy, scipy, pandas, matplotlib, seaborn, scikit-learn, pingouin, statsmodels
-- **Signal processing**: scipy.signal (Butterworth filters, notch filters, filtfilt)
+- **Signal processing**: scipy.signal (Butterworth filters, filtfilt, decimation)
+- **Statistics**: scipy.stats, statsmodels (OLS, mixed models), pingouin
 - **Dialogue coding**: OpenAI API (gpt-4.1-2025-04-14) with Pydantic structured outputs
 - **Chatbot**: Streamlit, OpenAI API (gpt-4o), tiktoken
 - **Data acquisition**: BIOPAC AcqKnowledge, read via bioread
@@ -846,8 +828,8 @@ Both subtraction-based and percent-change baseline correction methods are applie
    └── Conversation event extraction and alignment
 
 4. Statistical Analysis (03_statistical_analysis/)
-   ├── Event-related signal analysis
-   └── Group comparison statistics
+   ├── Participant-level event-related analysis (reported results)
+   └── Epoch-level event-related analysis (descriptive)
 
 5. Conversation Analysis (conversations_analysis/)
    ├── GPT-based behavioral coding
@@ -1006,10 +988,11 @@ Keyword sentiment analysis with predefined dictionaries:
 
 ## Ethical Considerations
 
-- **Random Assignment**: Participants were randomly assigned to experimental conditions
+- **Allocation**: Participants were allocated to conditions by a pre-specified alternating sequence
+- **Ethical approval**: Research Ethics Committee (Komisja Etyki Badań) of Kozminski University, opinion of 8 December 2022
 - **Anonymity**: Data stored with participant IDs; no personally identifying information retained
 - **Informed Consent**: Written consent obtained from all participants prior to participation
 - **Right to Withdraw**: Participants informed they could withdraw at any time without penalty
-- **Debriefing**: Full debriefing provided following task completion explaining the true nature of the study and the chatbot manipulation
+- **Incomplete disclosure and debriefing**: Participants were not told in advance that the chatbot's interactional style was experimentally assigned; the persona type was not disclosed until the debriefing at the end of the session (see Procedure, step 7)
 - **Participant Wellbeing**: Researcher monitored for signs of distress; breaks offered as needed; post-study support contact provided
 - **Data Protection**: Physiological and behavioral data analyzed separately and in combination; stored securely

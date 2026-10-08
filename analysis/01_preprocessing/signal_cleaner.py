@@ -52,11 +52,16 @@ MEMORY_CONFIG = {
     'force_gc_frequency': 5,  # Force garbage collection every N channels
 }
 
-# Cleaning parameters (unchanged)
+# Cleaning parameters.
+# Sample-wise artifact interpolation is disabled: replacing samples more than 3 SD from the
+# mean by straight lines clips the peaks of genuine fEMG bursts and the tops of large skin
+# conductance responses. Offset removal is applied to fEMG only, so EDA keeps its absolute
+# level in microsiemens. The reported event-related results are computed from the raw
+# recordings by analysis/03_statistical_analysis/participant_level_*.py.
 CLEANING_CONFIG = {
-    'remove_dc_offset': True,
+    'remove_dc_offset': True,          # applied to fEMG only (see clean_channel)
     'apply_channel_filters': True,
-    'remove_artifacts': True,
+    'remove_artifacts': False,
     'interpolate_artifacts': True,
     'quality_threshold': 10,
     'manual_review_threshold': 20,
@@ -65,7 +70,9 @@ CLEANING_CONFIG = {
     'create_validation_plots': True,
 }
 
-# Channel-specific filter parameters (unchanged)
+# Channel-specific filter parameters.
+# No software notch filter: the recordings already carry AcqKnowledge's real-time
+# line-frequency comb filter (50 Hz and harmonics).
 FILTER_PARAMS = {
     'EDA': {
         'type': 'lowpass',
@@ -77,9 +84,7 @@ FILTER_PARAMS = {
         'type': 'bandpass',
         'cutoff': [20, 500],
         'order': 4,
-        'additional_filters': [
-            {'type': 'notch', 'freq': 50, 'Q': 30}
-        ]
+        'additional_filters': []
     }
 }
 
@@ -485,7 +490,7 @@ class MemoryEfficientSignalCleaner:
                 cleaning_steps.append(f"Quality score: {quality_score}")
 
         # Step 1: Remove DC offset
-        if CLEANING_CONFIG['remove_dc_offset']:
+        if CLEANING_CONFIG['remove_dc_offset'] and channel_type == 'fEMG':
             original_mean = np.mean(cleaned_signal)
             cleaned_signal = self.remove_dc_offset(cleaned_signal)
             cleaning_steps.append(f"Removed DC offset: {original_mean:.6f}")

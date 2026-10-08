@@ -5,12 +5,12 @@ abstract: >-
   Chatbot application and analysis code for a laboratory experiment on how AI persona
   affects stress, dialogue behavior, and work quality: the two persona system prompts,
   the Streamlit chat interface that delivered them, the psychophysiological
-  signal-processing and event-related analysis pipeline, the LLM dialogue-coding
+  signal-processing pipeline and participant-level event-related analysis, the LLM dialogue-coding
   pipeline, and the statistical analysis and figure scripts.
 type: software
 license: Apache-2.0
-version: 1.0.0
-date-released: "2026-08-22"
+version: 1.1.0
+date-released: "2026-10-08"
 doi: 10.5281/zenodo.22060071
 identifiers:
   - type: doi
@@ -18,7 +18,7 @@ identifiers:
     description: Concept DOI for all versions of this software
   - type: doi
     value: 10.5281/zenodo.22060072
-    description: Version DOI for release v1.0.0 (the version used in the paper)
+    description: Version DOI for release v1.0.0
 repository-code: https://github.com/leontikos/ai-persona-psychophysiology
 url: https://github.com/leontikos/ai-persona-psychophysiology
 authors:

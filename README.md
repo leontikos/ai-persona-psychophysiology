@@ -86,9 +86,10 @@ $STUDY_DATA_ROOT/
 │   ├── AI_boss_qualtrics_quality.csv INPUT   Qualtrics export
 │   └── analysis_output/              step 8
 ├── signal_quality_analysis/          step 1
-├── cleaned_signals/                  step 3
+├── cleaned_signals/                  steps 3-4
 ├── CONVERSATION_ANALYSES/            steps 6-7
-├── event_related_analysis/           step 5
+├── event_related_analysis/           step 5 (descriptive, epoch level)
+├── event_related_participant_level/  step 5b (reported results)
 ├── PERCEPTION_ANALYSIS/              step 9
 ├── statistics_output/                step 10
 └── figures/                          step 11
@@ -137,13 +138,24 @@ python analysis/utils/validate_group_assignments.py        # log condition vs. Q
 | 2 | `analysis/01_preprocessing/signal_quality_summary_generator.py`                       | `signal_quality_analysis/`                  | Interactive HTML dashboards across participants and channels                                                                                   |
 | 3 | `analysis/01_preprocessing/signal_cleaner.py`                                         | `psychophysiology_signal/`, quality results | `cleaned_signals/` — filtered signals as `.npy` plus metadata and cleaning reports                                                        |
 | 4 | `analysis/02_feature_extraction/conversation_event_extractor_after_signal_cleaner.py` | `cleaned_signals/`, `conversation_logs/`  | Per-participant conversation-event, experimental-info, and event-summary JSON alongside the cleaned signals                                    |
-| 5 | `analysis/03_statistical_analysis/event_related_signal_analysis.py`                   | `cleaned_signals/` and the event files      | `event_related_analysis/` — epochs time-locked to chatbot messages, group averages, comparisons, `extracted_data/participant_epochs.json` |
+| 5 | `analysis/03_statistical_analysis/event_related_signal_analysis.py`                   | `cleaned_signals/` and the event files      | `event_related_analysis/` — epoch-level grand averages and descriptive comparisons |
+| 5b | `analysis/03_statistical_analysis/participant_level_extract.py`, then `participant_level_stats.py`, then `participant_level_figures.py` | `psychophysiology_signal/`, `conversation_logs/`, experimental-info files from step 4 | `event_related_participant_level/` — per-participant epochs, participant-level statistics; `figures/` — main-text Fig. 4 and Supplementary Figs. 9–10 |
 
-EDA is DC-offset removed, low-pass filtered (4th-order Butterworth, 5 Hz) and artifact-corrected
-by interpolation; fEMG is band-pass filtered (4th-order Butterworth, 20–500 Hz) with 50/60 Hz
-notch filters and an RMS envelope (50 ms window). Epochs span −2 to +18 s for EDA and −2 to
-+13 s for fEMG around chatbot message onsets, baseline-corrected against the pre-event period.
-Full parameters are in [docs/STUDY_PROTOCOL.md](docs/STUDY_PROTOCOL.md).
+Step 5b produces every event-related result reported in the paper. It expects one
+conversation log per participant, so run the conversation-log preparation above first. It reads
+the raw recordings: EDA stays in absolute microsiemens and is low-pass filtered once (4th-order
+zero-phase Butterworth, 5 Hz); fEMG is band-pass filtered once (4th-order zero-phase
+Butterworth, 20–500 Hz) and summarised as a 50 ms RMS envelope. No software notch filter is
+applied, because the recordings already carry AcqKnowledge's real-time line-frequency comb
+filter, and no sample-level artifact correction is applied; outlier fEMG epochs (mean envelope
+more than 5 MAD above the participant's median) are excluded, and every fEMG result is also
+computed with all epochs. Epochs span −2 to +18 s for EDA and −2 to +13 s for fEMG around
+the onset of each chatbot reply, each referenced to its 2 s pre-onset mean. All tests use the
+participant as the unit: participant-averaged waveforms, BCa bootstrap CIs, cluster-based
+permutation tests with condition labels permuted across participants (10,000 permutations),
+and a linear mixed model of single-epoch EDA peaks with a participant random intercept. Step 5
+pools epochs across participants and is kept for its descriptive outputs only. Full parameters
+are in [docs/STUDY_PROTOCOL.md](docs/STUDY_PROTOCOL.md).
 
 Step 4 applies a two-hour timezone correction to the BIOPAC timestamps to align them with the
 conversation logs. Verify this offset against your own recording setup before running it.
@@ -193,7 +205,6 @@ cd analysis/statistics
 python recompute_stats.py                  # rebuilds statistics_output/survey_scored.pkl
 python compute_survey.py                   # needs step 8
 python compute_behavioral.py               # needs steps 7 and 8
-python compute_physio.py                   # needs step 5
 python make_main_fig2.py                   # needs step 7
 python regenerate_manuscript_figures.py    # needs step 7 and recompute_stats.py
 ```
@@ -201,7 +212,9 @@ python regenerate_manuscript_figures.py    # needs step 7 and recompute_stats.py
 `recompute_stats.py` reconstructs the survey scale scores from the raw Qualtrics export and
 holds the shared helpers: noncentral-*t* CIs for Cohen's *d*, Fisher-*z* CIs, partial-η² CIs,
 rank-biserial *r*, Hodges-Lehmann estimates, BCa bootstrap, Cramér's *V*, and JZS Bayes
-factors. The other four scripts consume it. Random seeds are fixed; BCa bootstrap intervals
+factors. The other scripts in this folder consume it. The physiological statistics come from
+step 5b; their aggregate outputs are shipped here as `physio_participant_tests.csv` and
+`physio_participant_clusters.csv`. Random seeds are fixed; BCa bootstrap intervals
 (5,000 resamples) may vary in the last reported digit.
 
 The two figure scripts write PNGs to `$STUDY_DATA_ROOT/figures/`.
@@ -216,7 +229,10 @@ The two figure scripts write PNGs to `$STUDY_DATA_ROOT/figures/`.
   bit-reproducible; expect close but not identical dialogue on a rerun.
 - Step 6 (LLM dialogue coding) is the one stage whose output can shift between runs. The coded
   dataframes derived from it in the published analysis are part of the data archive.
-- All statistics scripts set explicit seeds.
+- All statistics scripts set explicit seeds; the participant-level physiology uses seed 20261006.
+- Version 1.1.0 replaced the reported physiological analysis with the participant-level
+  pipeline (step 5b). Version 1.0.0 derived those results from epoch-pooled tests on signals
+  that had been sample-wise clipped and filtered twice; it remains available under its own DOI.
 
 ## Citation
 
@@ -233,7 +249,8 @@ Data: [https://doi.org/10.18150/IPGR44](https://doi.org/10.18150/IPGR44)
 
 Polish National Science Centre (NCN) OPUS 21 grant no. 2021/41/B/HS4/03664, with additional
 support from NCN SONATA 21 grant no. 2025/59/D/HS4/02851. The study protocol was approved by
-the Internal Research Ethics Board Committee of Kozminski University.
+the Research Ethics Committee (Komisja Etyki Badań) of Kozminski University (opinion of
+8 December 2022).
 
 ## License
 
