@@ -1,8 +1,9 @@
 #!/usr/bin/env python
-"""Build the supplementary figures, written to $STUDY_DATA_ROOT/figures/:
- - Fig 2 (communication strategy), Fig 5 (emotional tone), Fig 6 (task engagement):
-   box plots with individual conversation points, all categories.
- - Fig 15 (task experience) and Fig 16 (pre-post attitudes) on the full 1-5 scale.
+"""Build Supplementary Figs. 11 and 12 (figure15.png, figure16.png: task experience and pre-post
+attitudes) on the full 1-5 scale, written to $STUDY_DATA_ROOT/figures/.
+The box-plot figures (main-text Figs. 2-3, Supplementary Fig. 3, and figure02.png, an overview of
+all six strategy families not shown in the paper) are drawn by
+analysis/conversations_analysis/behavior_corrected.py.
 Requires survey_scored.pkl from recompute_stats.py.
 """
 import os
@@ -17,55 +18,9 @@ from dotenv import load_dotenv
 load_dotenv()
 DATA_ROOT=os.environ.get("STUDY_DATA_ROOT","data")
 FIG=os.path.join(DATA_ROOT,"figures"); os.makedirs(FIG,exist_ok=True)
-CONV=os.path.join(DATA_ROOT,"CONVERSATION_ANALYSES","conversations_dataframe.csv")
 PKL=os.path.join(DATA_ROOT,"statistics_output","survey_scored.pkl")
-SLc="#4C9BE0"; DTc="#E4695B"; rng=np.random.default_rng(3)
-cv=pd.read_csv(CONV)
+SLc="#4C9BE0"; DTc="#E4695B"
 df=pd.read_pickle(PKL)
-
-def boxpoints(ax, sl, dt):
-    for i,(data,color) in enumerate([(sl,SLc),(dt,DTc)]):
-        ax.boxplot(data,positions=[i],widths=0.55,patch_artist=True,showfliers=False,
-                   medianprops=dict(color="black",lw=1.4),
-                   boxprops=dict(facecolor=color,alpha=.35,edgecolor=color),
-                   whiskerprops=dict(color=color),capprops=dict(color=color))
-        x=np.full(len(data),i)+rng.uniform(-.11,.11,len(data))
-        ax.scatter(x,data,s=14,color=color,alpha=.75,edgecolor="white",linewidth=.4,zorder=3)
-        ax.scatter([i],[np.mean(data)],marker="D",s=42,color="black",zorder=4)
-    ax.set_xticks([0,1]); ax.set_xticklabels(["Servant\nLeader","Dark\nTriad"],fontsize=9)
-    ax.spines[['top','right']].set_visible(False)
-
-def grid_fig(specs, title, fname, ncol, ylabel="Proportion of messages", ymax=None):
-    n=len(specs); nrow=int(np.ceil(n/ncol))
-    fig,axes=plt.subplots(nrow,ncol,figsize=(2.7*ncol,4.0*nrow),sharey=True)
-    axes=np.array(axes).reshape(-1)
-    for ax,(col,lab) in zip(axes,specs):
-        sl=cv.loc[cv.condition=="servant_leader",col].dropna().values
-        dt=cv.loc[cv.condition=="dark_triad",col].dropna().values
-        boxpoints(ax,sl,dt); ax.set_title(lab,fontsize=11,fontweight="bold")
-        if ymax: ax.set_ylim(-0.02,ymax)
-    for ax in axes[n:]: ax.set_visible(False)
-    for r in range(nrow): axes[r*ncol].set_ylabel(ylabel)
-    fig.suptitle(title,fontsize=13,fontweight="bold",y=1.005)
-    fig.tight_layout()
-    fig.savefig(f"{FIG}/{fname}",dpi=300,bbox_inches="tight",facecolor="white"); plt.close(fig)
-    print("wrote",fname)
-
-# ---- Fig 2 strategy (6), Fig 5 emotion (6), Fig 6 engagement (3) ----
-grid_fig([("prop_compliance","Compliance"),("prop_negotiation","Negotiation"),
-          ("prop_help_seeking","Help-seeking"),("prop_resistance","Resistance"),
-          ("prop_coping","Coping"),("prop_jailbreaking","Jailbreaking")],
-         "Communication strategy: conversation-level proportions by condition",
-         "figure02.png",ncol=3)
-grid_fig([("prop_emotion_neutral","Neutral"),("prop_emotion_confident","Confident"),
-          ("prop_emotion_frustrated","Frustrated"),("prop_emotion_anxious","Anxious"),
-          ("prop_emotion_defensive","Defensive"),("prop_emotion_resigned","Resigned")],
-         "Participant emotional tone: conversation-level proportions by condition",
-         "figure05.png",ncol=3)
-grid_fig([("prop_engagement_high","High engagement"),("prop_engagement_medium","Medium engagement"),
-          ("prop_engagement_low","Low engagement")],
-         "Task engagement: conversation-level proportions by condition",
-         "figure06.png",ncol=3)
 
 # ---- Fig 15 task experience: line + SEM, FULL 1-5 axis ----
 TASKS=["Persona","Brief","Communication","Content"]
@@ -105,4 +60,3 @@ axes[0].set_ylabel("Mean score (1–5) ±SEM"); axes[0].legend(fontsize=9,loc="l
 fig.suptitle("Pre-Post Changes by Condition",fontsize=13,fontweight="bold",y=1.02)
 fig.tight_layout(); fig.savefig(f"{FIG}/figure16.png",dpi=300,bbox_inches="tight",facecolor="white"); plt.close(fig)
 print("wrote figure16.png (y-axis 1-5)")
-print("SL n=%d DT n=%d (conversations)"%((cv.condition=='servant_leader').sum(),(cv.condition=='dark_triad').sum()))

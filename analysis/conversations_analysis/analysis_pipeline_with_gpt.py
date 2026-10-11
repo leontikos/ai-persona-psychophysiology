@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 # All paths derive from STUDY_DATA_ROOT; see README.md, "Data layout".
 load_dotenv()
 DATA_ROOT = os.environ.get("STUDY_DATA_ROOT", "data")
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")  # needed only to run the coding itself
 CONVERSATION_LOGS_FOLDER = os.path.join(DATA_ROOT, "conversation_logs")
 OUTPUT_FOLDER = os.path.join(DATA_ROOT, "CONVERSATION_ANALYSES")
 

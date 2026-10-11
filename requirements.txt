@@ -1,5 +1,6 @@
 # Analysis environment (Python 3.11).
 # Versions are those used to produce the results reported in the paper.
+anthropic==0.112.0
 beautifulsoup4==4.12.3
 bioread==2025.3.13
 matplotlib==3.11.0

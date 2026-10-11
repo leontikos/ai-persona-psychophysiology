@@ -29,6 +29,28 @@ NBOOT = 5000
 # ----------------------------------------------------------------------------
 # effect-size CI helpers
 # ----------------------------------------------------------------------------
+
+def round_rating_means(df):
+    """The Qualtrics export stores the expert-rating means (Average_*, *_avg) with floating-point
+    noise of about 1e-15, which splits tied participants in rank tests; the archived data table
+    stores them to nine decimals. Rounding to nine decimals gives both the exact ties."""
+    cols = [c for c in df.columns
+            if c.startswith("Average_") or c in ("Completeness_avg", "Originality_avg", "Strategic_fit_avg")]
+    df[cols] = df[cols].round(9)
+    return df
+
+
+def anonymise_raters(df):
+    """The Qualtrics export names the three expert raters' columns by the raters' first names
+    (e.g. Average_<name>). Refer to them as Judge1-3, numbered in alphabetical order of the names."""
+    names = sorted(c.split("_", 1)[1] for c in df.columns if c.startswith("Average_") and c != "Average_all")
+    ren = {}
+    for c in df.columns:
+        stem, _, last = c.rpartition("_")
+        if last in names and stem:
+            ren[c] = f"{stem}_Judge{names.index(last) + 1}"
+    return df.rename(columns=ren)
+
 def d_ci_nct(d, n1, n2, conf=0.95):
     """95% CI for Cohen's d (independent groups) via noncentral t."""
     df = n1 + n2 - 2
@@ -200,6 +222,7 @@ def build_survey_table():
     descriptive_statistics.csv group means.
     """
     df = pd.read_csv(QUALTRICS); df.columns = df.columns.str.strip()
+    df = round_rating_means(anonymise_raters(df))
     TASKS = ["Persona","Brief","Communication","Content"]
     NEO = {
      "Neuroticism":{"items":[1,6,11,16,21,26,31,36,41,46,51,56],"reverse":[1,16,31,46]},

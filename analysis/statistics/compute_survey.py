@@ -64,20 +64,20 @@ def full_compare(var, col=None, bf=False):
     return res
 
 FAMILIES={
- "BASELINE(Table2)":["Age","Mood_1","AI_Experience","Technology_Trust","AI_Fear_composite",
+ "BASELINE":["Age","Mood_1","AI_Experience","Technology_Trust","AI_Fear_composite",
      "AI_Collaborators_pre","AI_Willingness_pre","Neuroticism","Extraversion","Openness",
      "Agreeableness","Conscientiousness"],
- "TASKITEMS(Table3)":["Familarity_Persona","Difficulty_Persona","Creativity_Persona",
+ "TASK_ITEMS":["Familarity_Persona","Difficulty_Persona","Creativity_Persona",
      "Familiarity_Brief","Difficulty_Brief","Creativity_Brief",
      "Familiarity_Communication","Difficulty_Communication","Creativity_Communication",
      "Familarity_Content","Difficulty_Content","Creativity_Content"],
- "POSTTASK(Table7)":["AI_Collaboration_post","AI_Reliability","Behavioral_Intention",
+ "POST_TASK":["AI_Collaboration_post","AI_Reliability","Behavioral_Intention",
      "AI_Willingness_post","AI_Fear_post","Human_AI_Fit","Anthropomorphism"],
- "PERSONA_EXPERIENCE(Table? persona-item)":["Focused_Attention_Persona","Enjoyment_Persona","Satisfaction_Persona"],
- "PERFORMANCE(Table4)":["Average_all","Completeness_avg","Originality_avg","Strategic_fit_avg",
-     "Average_Agata","Average_Alicja","Average_Natalia"],
+ "PERSONA_TASK_EXPERIENCE":["Focused_Attention_Persona","Enjoyment_Persona","Satisfaction_Persona"],
+ "PERFORMANCE":["Average_all","Completeness_avg","Originality_avg","Strategic_fit_avg",
+     "Average_Judge1","Average_Judge2","Average_Judge3"],
 }
-BF_VARS=set(FAMILIES["POSTTASK(Table7)"]+FAMILIES["PERSONA_EXPERIENCE(Table? persona-item)"])
+BF_VARS=set(FAMILIES["POST_TASK"]+FAMILIES["PERSONA_TASK_EXPERIENCE"])
 
 rows=[]
 for fam,vs in FAMILIES.items():

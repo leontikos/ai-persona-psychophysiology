@@ -158,8 +158,31 @@ print("  SELF-REPORT ANALYSIS: AI CHATBOT LEADERSHIP STYLES STUDY")
 print("=" * 80)
 print()
 
+def round_rating_means(df):
+    """The Qualtrics export stores the expert-rating means (Average_*, *_avg) with floating-point
+    noise of about 1e-15, which splits tied participants in rank tests; the archived data table
+    stores them to nine decimals. Rounding to nine decimals gives both the exact ties."""
+    cols = [c for c in df.columns
+            if c.startswith("Average_") or c in ("Completeness_avg", "Originality_avg", "Strategic_fit_avg")]
+    df[cols] = df[cols].round(9)
+    return df
+
+
+def anonymise_raters(df):
+    """The Qualtrics export names the three expert raters' columns by the raters' first names
+    (e.g. Average_<name>). Refer to them as Judge1-3, numbered in alphabetical order of the names."""
+    names = sorted(c.split("_", 1)[1] for c in df.columns if c.startswith("Average_") and c != "Average_all")
+    ren = {}
+    for c in df.columns:
+        stem, _, last = c.rpartition("_")
+        if last in names and stem:
+            ren[c] = f"{stem}_Judge{names.index(last) + 1}"
+    return df.rename(columns=ren)
+
+
 df = pd.read_csv(DATA_PATH)
 df.columns = df.columns.str.strip()
+df = round_rating_means(anonymise_raters(df))
 df["Group_label"] = df["Group"].map(GROUP_LABELS)
 
 n_total = len(df)
@@ -649,6 +672,9 @@ for measure in task_measures:
     try:
         aov = pg.mixed_anova(data=long_df, dv="Score", within="Task",
                              between="Group", subject="participantID")
+        # pingouin >= 0.6 renamed these columns; keep the names of the archived outputs
+        aov = aov.rename(columns={"p_unc": "p-unc", "p_GG_corr": "p-GG-corr",
+                                  "W_spher": "W-spher", "p_spher": "p-spher"})
         aov["Measure"] = measure
         task_anova_results.append(aov)
 
@@ -882,8 +908,8 @@ perf_defs = [
     ("Average_all", "Overall Quality (all judges, all dimensions)"),
     ("Completeness_avg", "Completeness"), ("Originality_avg", "Originality/Creativity"),
     ("Strategic_fit_avg", "Strategic Fit"),
-    ("Average_Agata", "Judge 1 (Ag)"), ("Average_Alicja", "Judge 2 (Al)"),
-    ("Average_Natalia", "Judge 3 (N)"),
+    ("Average_Judge1", "Judge 1"), ("Average_Judge2", "Judge 2"),
+    ("Average_Judge3", "Judge 3"),
 ]
 
 perf_results = []
@@ -906,11 +932,11 @@ print("  --- 11b. Inter-Rater Reliability (ICC) ---")
 print()
 
 icc_dims = {
-    "Completeness": ["Completeness_Agata","Completeness_Alicja","Completeness_Natalia"],
-    "Originality": ["Originality_and_creativity_Agata","Originality_and_creativity_Alicja",
-                     "Originality_and_creativity_Natalia"],
-    "Strategic Fit": ["Strategic_fit_Agata","Strategic_fit_Alicja","Strategic_fit_Natalia"],
-    "Overall Average": ["Average_Agata","Average_Alicja","Average_Natalia"],
+    "Completeness": ["Completeness_Judge1","Completeness_Judge2","Completeness_Judge3"],
+    "Originality": ["Originality_and_creativity_Judge1","Originality_and_creativity_Judge2",
+                     "Originality_and_creativity_Judge3"],
+    "Strategic Fit": ["Strategic_fit_Judge1","Strategic_fit_Judge2","Strategic_fit_Judge3"],
+    "Overall Average": ["Average_Judge1","Average_Judge2","Average_Judge3"],
 }
 
 icc_results = []
@@ -928,10 +954,10 @@ for dim, cols in icc_dims.items():
         continue
     try:
         icc_out = pg.intraclass_corr(data=icc_long, targets="target", raters="rater", ratings="rating")
-        icc2k = icc_out[icc_out["Type"] == "ICC2k"]
+        icc2k = icc_out[icc_out["Type"].isin(["ICC2k", "ICC(A,k)"])]   # pingouin < 0.6 / >= 0.6
         if not icc2k.empty:
             val = icc2k["ICC"].values[0]
-            ci = icc2k["CI95%"].values[0]
+            ci = icc2k["CI95%" if "CI95%" in icc2k else "CI95"].values[0]
             pv = icc2k["pval"].values[0]
             flag = "" if val >= 0.70 else "  [below 0.70]"
             print(f"  {dim}: ICC(2,k) = {val:.3f}, 95% CI [{ci[0]:.3f}, {ci[1]:.3f}], p = {pv:.4f}{flag}")
@@ -1070,6 +1096,7 @@ perf_plot_defs = [("Average_all","Overall"),("Completeness_avg","Completeness"),
                   ("Originality_avg","Originality"),("Strategic_fit_avg","Strategic Fit")]
 
 fig, axes = plt.subplots(1, 4, figsize=(16, 5), sharey=True)
+rng_jitter = np.random.default_rng(3)
 for idx, (col, label) in enumerate(perf_plot_defs):
     ax = axes[idx]
     g1 = df.loc[df["Group"]==1, col].dropna()
@@ -1091,15 +1118,19 @@ for idx, (col, label) in enumerate(perf_plot_defs):
             parts2[key].set_color(COLOR_DT)
 
     # Overlay individual points
-    ax.scatter(np.random.normal(0, 0.04, len(g1)), g1, color=COLOR_SL, alpha=0.5, s=20, zorder=3)
-    ax.scatter(np.random.normal(1, 0.04, len(g2)), g2, color=COLOR_DT, alpha=0.5, s=20, zorder=3)
+    ax.scatter(rng_jitter.normal(0, 0.04, len(g1)), g1, color=COLOR_SL, alpha=0.5, s=20, zorder=3)
+    ax.scatter(rng_jitter.normal(1, 0.04, len(g2)), g2, color=COLOR_DT, alpha=0.5, s=20, zorder=3)
 
-    # Stats annotation
+    # Stats annotation: Cohen's d in the title; bracket with the uncorrected Mann-Whitney p
     res = group_comparison(df, col)
     if res:
-        s = sig_stars(res["U_p"])
-        ax.set_title(f"{label}\nd = {res['Cohen_d']:.2f}{s}", fontsize=12, fontweight='bold')
+        ax.set_title(f"{label}\nd = {res['Cohen_d']:.2f}", fontsize=12, fontweight='bold')
+        s = sig_stars(res["U_p"]) or "n.s."
+        ax.plot([0, 0, 1, 1], [7.25, 7.4, 7.4, 7.25], color='black', linewidth=0.9)
+        ax.text(0.5, 7.4, s, ha='center', va='bottom', fontsize=13 if s != "n.s." else 11)
 
+    ax.set_ylim(0.6, 8.0)
+    ax.set_yticks(range(1, 8))
     ax.set_xticks([0, 1])
     ax.set_xticklabels(["Servant\nLeader", "Dark\nTriad"], fontsize=10)
     if idx == 0:

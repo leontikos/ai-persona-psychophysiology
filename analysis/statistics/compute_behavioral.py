@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 """Behavioral statistics: Mann-Whitney effect-size CIs, Cramer's V cluster-bootstrap CIs,
-correlation Fisher-z CIs, and ANOVA partial eta^2 90% CIs."""
+correlation Fisher-z CIs, and ANOVA partial eta^2 90% CIs.
+
+The conversation-level Mann-Whitney comparisons computed here (behavioral_enhanced.csv) read the
+coding model's own summary fields from conversations_dataframe.csv (message counts, lengths,
+listed turning points, label-share emotion proportions) and are superseded for every reported
+dialogue statistic by analysis/conversations_analysis/behavior_corrected.py. The Cramer's V, correlation and ANOVA intervals
+remain as reported."""
 import os, warnings
 
 import numpy as np, pandas as pd
@@ -114,10 +120,12 @@ def recover_n(r,p):
     except Exception: return np.nan
 pc=pd.read_csv(f"{OUT}/performance_correlates.csv")
 prows=[]
+scored=pd.read_pickle(os.path.join(STATS_OUT, "survey_scored.pkl"))   # from recompute_stats.py
 for _,row in pc.iterrows():
-    n=recover_n(row["r"],row["p"]); n=int(round(n)) if n==n else np.nan
-    lo,hi=fisher_z_ci(row["r"],n) if n==n else (np.nan,np.nan)
-    prows.append(dict(Variable=row["Variable"],r=row["r"],p=row["p"],n=n,ci_lo=lo,ci_hi=hi))
+    d=scored[[row["Variable"],"Average_all"]].dropna()   # pairwise-complete n
+    r,p=stats.pearsonr(d[row["Variable"]],d["Average_all"]); n=len(d)
+    lo,hi=fisher_z_ci(r,n)
+    prows.append(dict(Variable=row["Variable"],r=r,p=p,n=n,ci_lo=lo,ci_hi=hi))
 pcr=pd.DataFrame(prows); pcr.to_csv(f"{STATS_OUT}/perf_correlates_ci.csv",index=False)
 print("\n=== PERFORMANCE CORRELATES (Overall Quality ~ trait/measure), Fisher-z 95% CI ===")
 print(pcr.round(3).to_string())
@@ -138,7 +146,7 @@ arows=[]
 for _,row in an.iterrows():
     lo,hi=eta2_ci(row["F"],int(row["DF1"]),int(row["DF2"]),conf=0.90)
     arows.append(dict(Measure=row["Measure"],Source=row["Source"],F=row["F"],df1=int(row["DF1"]),df2=int(row["DF2"]),
-        p_unc=row["p-unc"],p_GG=row["p-GG-corr"],np2=row["np2"],eps=row["eps"],np2_lo=lo,np2_hi=hi))
+        p_unc=row.get("p-unc",row.get("p_unc")),p_GG=row.get("p-GG-corr",row.get("p_GG_corr")),np2=row["np2"],eps=row["eps"],np2_lo=lo,np2_hi=hi))
 anr=pd.DataFrame(arows); anr.to_csv(f"{STATS_OUT}/anova_eta2_ci.csv",index=False)
 print("\n=== MIXED ANOVA partial eta^2 with 90% CI ===")
 print(anr.round(4).to_string())

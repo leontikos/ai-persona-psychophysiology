@@ -1,0 +1,1465 @@
+{
+  "n_conversations": 57,
+  "coders": {
+    "claude-sonnet-5": 1219,
+    "gpt-5.6-terra": 1218,
+    "claude-opus-5": 1219,
+    "gpt-5.6-sol": 1219,
+    "gpt-4.1 (archived)": 1219
+  },
+  "batch_summary": {
+    "gpt-5.6-sol": {
+      "requests": 183,
+      "returned": 182,
+      "api_failures": 0,
+      "parse_failures": 0,
+      "messages_coded": 1219,
+      "input_tokens": 713673,
+      "output_tokens": 1545273,
+      "reasoning_tokens": 750378,
+      "batch_cost_usd": 16.88,
+      "resync_recovered": 1,
+      "sync_topup_cost_usd": 0.2
+    }
+  },
+  "dimensions": [
+    {
+      "dimension": "primary_strategy",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.5212176751964963,
+          "raw_agreement": 0.6532456861133936,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.480561970399233,
+          "raw_agreement": 0.6127973748974569,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.35153964565064133,
+          "raw_agreement": 0.49056603773584906,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.407768894078523,
+          "raw_agreement": 0.5500821018062397,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.44435339303920585,
+          "raw_agreement": 0.5875102711585867,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.4157438224446178,
+          "raw_agreement": 0.5727198027937551,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.44456492913895596,
+          "raw_agreement": 0.6019736842105263,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.3033897072871353,
+          "raw_agreement": 0.44544708777686626,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.37942407690627056,
+          "raw_agreement": 0.5213464696223317,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.6634305857065217,
+          "raw_agreement": 0.777504105090312,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.4296105034029867
+    },
+    {
+      "dimension": "strategy_family",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.5489327725041193,
+          "raw_agreement": 0.7124075595727198,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.5337982838118693,
+          "raw_agreement": 0.694011484823626,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.3476317721387233,
+          "raw_agreement": 0.5233798195242002,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.42245844261893006,
+          "raw_agreement": 0.5952380952380952,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.4486530608986513,
+          "raw_agreement": 0.6269515201314708,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.41508587337167646,
+          "raw_agreement": 0.6039441248972884,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.45543667660038767,
+          "raw_agreement": 0.6381578947368421,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.316603518365033,
+          "raw_agreement": 0.48728465955701394,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.3937265339364667,
+          "raw_agreement": 0.5599343185550082,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.6809180202803649,
+          "raw_agreement": 0.8037766830870279,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.4416442880046123
+    },
+    {
+      "dimension": "task_engagement",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.605428606042425,
+          "raw_agreement": 0.7691043549712407,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.2178293162226812,
+          "raw_agreement": 0.5808039376538146,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.4448790866169432,
+          "raw_agreement": 0.689909762100082,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.40734480639213266,
+          "raw_agreement": 0.6724137931034483,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.2975569833805951,
+          "raw_agreement": 0.6696795398520953,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.5357669218160017,
+          "raw_agreement": 0.7649958915365653,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.4999026311381536,
+          "raw_agreement": 0.7516447368421053,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.42673146048573496,
+          "raw_agreement": 0.7883511074651354,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.44654241279896056,
+          "raw_agreement": 0.8070607553366174,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.6538089980678996,
+          "raw_agreement": 0.8579638752052545,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.4452684966432632
+    },
+    {
+      "dimension": "frustrated",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.7484255061119303,
+          "raw_agreement": 0.9506984387838948,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.527958488228005,
+          "raw_agreement": 0.9015586546349467,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.5990348623700416,
+          "raw_agreement": 0.9351927809680065,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.5118169002404843,
+          "raw_agreement": 0.9285714285714286,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.5333171423823706,
+          "raw_agreement": 0.9013968775677896,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.6258408588750836,
+          "raw_agreement": 0.9383730484798686,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.5104581312875442,
+          "raw_agreement": 0.9268092105263158,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.4902559852323457,
+          "raw_agreement": 0.9089417555373257,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.4446854129186485,
+          "raw_agreement": 0.9088669950738916,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.7014010615216779,
+          "raw_agreement": 0.9671592775041051,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.5657236782367707
+    }
+  ],
+  "tone_dimensions": [
+    {
+      "dimension": "tone_anxious",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.5426893182762098,
+          "raw_agreement": 0.9687756778964667,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3169476847842697,
+          "raw_agreement": 0.9278096800656276,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.5216547223197505,
+          "raw_agreement": 0.9688269073010665,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.27490408784230713,
+          "raw_agreement": 0.9630541871921182,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3116016650470651,
+          "raw_agreement": 0.9359079704190633,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.5186425482544035,
+          "raw_agreement": 0.9753492193919474,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.3466241754984065,
+          "raw_agreement": 0.9761513157894737,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.34465301733793285,
+          "raw_agreement": 0.940935192780968,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.15492438214680926,
+          "raw_agreement": 0.9351395730706076,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.4809448435407282,
+          "raw_agreement": 0.9827586206896551,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.36434022005155975
+    },
+    {
+      "dimension": "tone_confident",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.5767099003680101,
+          "raw_agreement": 0.8471651602300739,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3370585405355334,
+          "raw_agreement": 0.7013945857260049,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.5895473252793964,
+          "raw_agreement": 0.8712059064807219,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.4424255229241495,
+          "raw_agreement": 0.861247947454844,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3304184957565115,
+          "raw_agreement": 0.6910435497124076,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.45432720049188857,
+          "raw_agreement": 0.8052588331963846,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.3328280068395354,
+          "raw_agreement": 0.7952302631578947,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.3147609889327435,
+          "raw_agreement": 0.6923707957342083,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.17970441994993447,
+          "raw_agreement": 0.6461412151067324,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.5032404406999352,
+          "raw_agreement": 0.8801313628899836,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.3793625057552047
+    },
+    {
+      "dimension": "tone_defensive",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.6639359351988218,
+          "raw_agreement": 0.9605587510271159,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.5343556967568222,
+          "raw_agreement": 0.9663658736669402,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.6086900694092722,
+          "raw_agreement": 0.963084495488105,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.5989490236133697,
+          "raw_agreement": 0.9597701149425287,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3810519831235719,
+          "raw_agreement": 0.9416598192276089,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.6079091809059649,
+          "raw_agreement": 0.9548069022185702,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.5716681949321226,
+          "raw_agreement": 0.9481907894736842,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.3896196437168994,
+          "raw_agreement": 0.9573420836751435,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.39661364802462795,
+          "raw_agreement": 0.9540229885057471,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.6485621247303555,
+          "raw_agreement": 0.9655172413793104,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.5524337061759745
+    },
+    {
+      "dimension": "tone_frustrated",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.7484255061119303,
+          "raw_agreement": 0.9506984387838948,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.527958488228005,
+          "raw_agreement": 0.9015586546349467,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.5990348623700416,
+          "raw_agreement": 0.9351927809680065,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.5118169002404843,
+          "raw_agreement": 0.9285714285714286,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.5333171423823706,
+          "raw_agreement": 0.9013968775677896,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.6258408588750836,
+          "raw_agreement": 0.9383730484798686,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.5104581312875442,
+          "raw_agreement": 0.9268092105263158,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.4902559852323457,
+          "raw_agreement": 0.9089417555373257,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.4446854129186485,
+          "raw_agreement": 0.9088669950738916,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.7014010615216779,
+          "raw_agreement": 0.9671592775041051,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.5657236782367707
+    },
+    {
+      "dimension": "tone_neutral",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.6332055165798789,
+          "raw_agreement": 0.8874281018898932,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.20171042993591948,
+          "raw_agreement": 0.55701394585726,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.5089469147041998,
+          "raw_agreement": 0.8359310910582445,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.5794018604341014,
+          "raw_agreement": 0.8809523809523809,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.25620376695134306,
+          "raw_agreement": 0.5949055053410025,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.5510948160972164,
+          "raw_agreement": 0.8364831552999178,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.596938775510204,
+          "raw_agreement": 0.8700657894736842,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.3055241826668399,
+          "raw_agreement": 0.6259228876127974,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.2354170592568483,
+          "raw_agreement": 0.5788177339901478,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.6478689593350175,
+          "raw_agreement": 0.8776683087027914,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.3904491116222736
+    },
+    {
+      "dimension": "tone_resigned",
+      "pairwise": {
+        "claude-opus-5 vs claude-sonnet-5": {
+          "kappa": 0.36189786171196503,
+          "raw_agreement": 0.9548069022185702,
+          "n": 1217
+        },
+        "claude-opus-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3712848945909354,
+          "raw_agreement": 0.9737489745693191,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-sol": {
+          "kappa": 0.4139679209824745,
+          "raw_agreement": 0.9819524200164069,
+          "n": 1219
+        },
+        "claude-opus-5 vs gpt-5.6-terra": {
+          "kappa": 0.27908518395757376,
+          "raw_agreement": 0.9794745484400657,
+          "n": 1218
+        },
+        "claude-sonnet-5 vs gpt-4.1 (archived)": {
+          "kappa": 0.3340927405314523,
+          "raw_agreement": 0.9548069022185702,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-sol": {
+          "kappa": 0.24283047882892927,
+          "raw_agreement": 0.9564502875924404,
+          "n": 1217
+        },
+        "claude-sonnet-5 vs gpt-5.6-terra": {
+          "kappa": 0.19759513160788922,
+          "raw_agreement": 0.9555921052631579,
+          "n": 1216
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-sol": {
+          "kappa": 0.3453595664697554,
+          "raw_agreement": 0.9819524200164069,
+          "n": 1219
+        },
+        "gpt-4.1 (archived) vs gpt-5.6-terra": {
+          "kappa": 0.2514029180695848,
+          "raw_agreement": 0.9811165845648604,
+          "n": 1218
+        },
+        "gpt-5.6-sol vs gpt-5.6-terra": {
+          "kappa": 0.585432266848196,
+          "raw_agreement": 0.9942528735632183,
+          "n": 1218
+        }
+      },
+      "n_units": {
+        "claude-opus-5 vs claude-sonnet-5": 1217,
+        "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+        "claude-opus-5 vs gpt-5.6-sol": 1219,
+        "claude-opus-5 vs gpt-5.6-terra": 1218,
+        "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+        "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+        "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+        "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+        "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+        "gpt-5.6-sol vs gpt-5.6-terra": 1218
+      },
+      "krippendorff_alpha": 0.3162890614920135
+    }
+  ],
+  "legacy_first_tone": {
+    "dimension": "first_tone_alphabetical",
+    "pairwise": {
+      "claude-opus-5 vs claude-sonnet-5": {
+        "kappa": 0.6030219456704523,
+        "raw_agreement": 0.772391125718981,
+        "n": 1217
+      },
+      "claude-opus-5 vs gpt-4.1 (archived)": {
+        "kappa": 0.3561758919222774,
+        "raw_agreement": 0.579163248564397,
+        "n": 1219
+      },
+      "claude-opus-5 vs gpt-5.6-sol": {
+        "kappa": 0.5670066473841782,
+        "raw_agreement": 0.7817883511074651,
+        "n": 1219
+      },
+      "claude-opus-5 vs gpt-5.6-terra": {
+        "kappa": 0.46812462472873506,
+        "raw_agreement": 0.7569786535303776,
+        "n": 1218
+      },
+      "claude-sonnet-5 vs gpt-4.1 (archived)": {
+        "kappa": 0.34096249337274953,
+        "raw_agreement": 0.5686113393590797,
+        "n": 1217
+      },
+      "claude-sonnet-5 vs gpt-5.6-sol": {
+        "kappa": 0.4828577427611582,
+        "raw_agreement": 0.7206244864420707,
+        "n": 1217
+      },
+      "claude-sonnet-5 vs gpt-5.6-terra": {
+        "kappa": 0.39685113282416695,
+        "raw_agreement": 0.694078947368421,
+        "n": 1216
+      },
+      "gpt-4.1 (archived) vs gpt-5.6-sol": {
+        "kappa": 0.3234290992132256,
+        "raw_agreement": 0.5701394585726005,
+        "n": 1219
+      },
+      "gpt-4.1 (archived) vs gpt-5.6-terra": {
+        "kappa": 0.2296787926268643,
+        "raw_agreement": 0.5082101806239737,
+        "n": 1218
+      },
+      "gpt-5.6-sol vs gpt-5.6-terra": {
+        "kappa": 0.5610473943612622,
+        "raw_agreement": 0.8226600985221675,
+        "n": 1218
+      }
+    },
+    "n_units": {
+      "claude-opus-5 vs claude-sonnet-5": 1217,
+      "claude-opus-5 vs gpt-4.1 (archived)": 1219,
+      "claude-opus-5 vs gpt-5.6-sol": 1219,
+      "claude-opus-5 vs gpt-5.6-terra": 1218,
+      "claude-sonnet-5 vs gpt-4.1 (archived)": 1217,
+      "claude-sonnet-5 vs gpt-5.6-sol": 1217,
+      "claude-sonnet-5 vs gpt-5.6-terra": 1216,
+      "gpt-4.1 (archived) vs gpt-5.6-sol": 1219,
+      "gpt-4.1 (archived) vs gpt-5.6-terra": 1218,
+      "gpt-5.6-sol vs gpt-5.6-terra": 1218
+    },
+    "krippendorff_alpha": 0.41199764422050433
+  },
+  "agreement_by_class": [
+    {
+      "dimension": "first_tone_alphabetical",
+      "cross-provider": 0.435,
+      "same provider, across generation": 0.277,
+      "same provider, same generation": 0.582
+    },
+    {
+      "dimension": "frustrated",
+      "cross-provider": 0.551,
+      "same provider, across generation": 0.467,
+      "same provider, same generation": 0.725
+    },
+    {
+      "dimension": "primary_strategy",
+      "cross-provider": 0.424,
+      "same provider, across generation": 0.341,
+      "same provider, same generation": 0.592
+    },
+    {
+      "dimension": "strategy_family",
+      "cross-provider": 0.437,
+      "same provider, across generation": 0.355,
+      "same provider, same generation": 0.615
+    },
+    {
+      "dimension": "task_engagement",
+      "cross-provider": 0.401,
+      "same provider, across generation": 0.437,
+      "same provider, same generation": 0.63
+    },
+    {
+      "dimension": "tone_anxious",
+      "cross-provider": 0.382,
+      "same provider, across generation": 0.25,
+      "same provider, same generation": 0.512
+    },
+    {
+      "dimension": "tone_confident",
+      "cross-provider": 0.414,
+      "same provider, across generation": 0.247,
+      "same provider, same generation": 0.54
+    },
+    {
+      "dimension": "tone_defensive",
+      "cross-provider": 0.55,
+      "same provider, across generation": 0.393,
+      "same provider, same generation": 0.656
+    },
+    {
+      "dimension": "tone_frustrated",
+      "cross-provider": 0.551,
+      "same provider, across generation": 0.467,
+      "same provider, same generation": 0.725
+    },
+    {
+      "dimension": "tone_neutral",
+      "cross-provider": 0.449,
+      "same provider, across generation": 0.27,
+      "same provider, same generation": 0.641
+    },
+    {
+      "dimension": "tone_resigned",
+      "cross-provider": 0.306,
+      "same provider, across generation": 0.298,
+      "same provider, same generation": 0.474
+    }
+  ],
+  "condition_replication": [
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "strategy_family",
+      "level": "COMPLIANCE",
+      "M_DT": 47.5,
+      "M_SL": 44.7,
+      "cohens_d_DT_minus_SL": 0.112,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "strategy_family",
+      "level": "COPING",
+      "M_DT": 1.3,
+      "M_SL": 0.6,
+      "cohens_d_DT_minus_SL": 0.285,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "strategy_family",
+      "level": "HELP",
+      "M_DT": 32.5,
+      "M_SL": 44.7,
+      "cohens_d_DT_minus_SL": -0.474,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "strategy_family",
+      "level": "JAILBREAKING",
+      "M_DT": 1.9,
+      "M_SL": 0.8,
+      "cohens_d_DT_minus_SL": 0.335,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "strategy_family",
+      "level": "NEGOTIATION",
+      "M_DT": 6.2,
+      "M_SL": 6.8,
+      "cohens_d_DT_minus_SL": -0.065,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "strategy_family",
+      "level": "RESISTANCE",
+      "M_DT": 10.6,
+      "M_SL": 2.4,
+      "cohens_d_DT_minus_SL": 1.021,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "task_engagement",
+      "level": "HIGH",
+      "M_DT": 52.2,
+      "M_SL": 66.0,
+      "cohens_d_DT_minus_SL": -0.602,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "task_engagement",
+      "level": "LOW",
+      "M_DT": 15.6,
+      "M_SL": 6.5,
+      "cohens_d_DT_minus_SL": 0.612,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "dimension": "task_engagement",
+      "level": "MEDIUM",
+      "M_DT": 32.3,
+      "M_SL": 27.5,
+      "cohens_d_DT_minus_SL": 0.26,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "strategy_family",
+      "level": "COMPLIANCE",
+      "M_DT": 29.7,
+      "M_SL": 28.2,
+      "cohens_d_DT_minus_SL": 0.067,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "strategy_family",
+      "level": "COPING",
+      "M_DT": 0.6,
+      "M_SL": 0.1,
+      "cohens_d_DT_minus_SL": 0.423,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "strategy_family",
+      "level": "HELP",
+      "M_DT": 51.9,
+      "M_SL": 56.0,
+      "cohens_d_DT_minus_SL": -0.151,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "strategy_family",
+      "level": "JAILBREAKING",
+      "M_DT": 0.8,
+      "M_SL": 0.0,
+      "cohens_d_DT_minus_SL": 0.431,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "strategy_family",
+      "level": "NEGOTIATION",
+      "M_DT": 6.1,
+      "M_SL": 8.3,
+      "cohens_d_DT_minus_SL": -0.238,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "strategy_family",
+      "level": "RESISTANCE",
+      "M_DT": 10.9,
+      "M_SL": 7.4,
+      "cohens_d_DT_minus_SL": 0.388,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "task_engagement",
+      "level": "HIGH",
+      "M_DT": 70.3,
+      "M_SL": 85.6,
+      "cohens_d_DT_minus_SL": -0.834,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "task_engagement",
+      "level": "LOW",
+      "M_DT": 11.2,
+      "M_SL": 4.6,
+      "cohens_d_DT_minus_SL": 0.519,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "dimension": "task_engagement",
+      "level": "MEDIUM",
+      "M_DT": 18.5,
+      "M_SL": 9.8,
+      "cohens_d_DT_minus_SL": 0.795,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "strategy_family",
+      "level": "COMPLIANCE",
+      "M_DT": 48.3,
+      "M_SL": 68.7,
+      "cohens_d_DT_minus_SL": -0.836,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "strategy_family",
+      "level": "COPING",
+      "M_DT": 1.4,
+      "M_SL": 0.1,
+      "cohens_d_DT_minus_SL": 0.682,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "strategy_family",
+      "level": "HELP",
+      "M_DT": 27.9,
+      "M_SL": 16.0,
+      "cohens_d_DT_minus_SL": 0.604,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "strategy_family",
+      "level": "JAILBREAKING",
+      "M_DT": 4.0,
+      "M_SL": 2.5,
+      "cohens_d_DT_minus_SL": 0.233,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "strategy_family",
+      "level": "NEGOTIATION",
+      "M_DT": 10.2,
+      "M_SL": 10.9,
+      "cohens_d_DT_minus_SL": -0.058,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "strategy_family",
+      "level": "RESISTANCE",
+      "M_DT": 8.2,
+      "M_SL": 1.8,
+      "cohens_d_DT_minus_SL": 0.849,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "task_engagement",
+      "level": "HIGH",
+      "M_DT": 47.3,
+      "M_SL": 57.6,
+      "cohens_d_DT_minus_SL": -0.38,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "task_engagement",
+      "level": "LOW",
+      "M_DT": 17.0,
+      "M_SL": 11.5,
+      "cohens_d_DT_minus_SL": 0.306,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "claude-opus-5",
+      "dimension": "task_engagement",
+      "level": "MEDIUM",
+      "M_DT": 35.7,
+      "M_SL": 30.9,
+      "cohens_d_DT_minus_SL": 0.255,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "strategy_family",
+      "level": "COMPLIANCE",
+      "M_DT": 26.5,
+      "M_SL": 10.8,
+      "cohens_d_DT_minus_SL": 0.986,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "strategy_family",
+      "level": "COPING",
+      "M_DT": 0.6,
+      "M_SL": 0.4,
+      "cohens_d_DT_minus_SL": 0.178,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "strategy_family",
+      "level": "HELP",
+      "M_DT": 54.6,
+      "M_SL": 73.5,
+      "cohens_d_DT_minus_SL": -0.888,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "strategy_family",
+      "level": "JAILBREAKING",
+      "M_DT": 1.1,
+      "M_SL": 0.0,
+      "cohens_d_DT_minus_SL": 0.449,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "strategy_family",
+      "level": "NEGOTIATION",
+      "M_DT": 5.1,
+      "M_SL": 7.2,
+      "cohens_d_DT_minus_SL": -0.218,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "strategy_family",
+      "level": "RESISTANCE",
+      "M_DT": 12.1,
+      "M_SL": 8.1,
+      "cohens_d_DT_minus_SL": 0.411,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "task_engagement",
+      "level": "HIGH",
+      "M_DT": 66.9,
+      "M_SL": 82.6,
+      "cohens_d_DT_minus_SL": -0.895,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "task_engagement",
+      "level": "LOW",
+      "M_DT": 11.7,
+      "M_SL": 4.5,
+      "cohens_d_DT_minus_SL": 0.638,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "dimension": "task_engagement",
+      "level": "MEDIUM",
+      "M_DT": 21.5,
+      "M_SL": 12.9,
+      "cohens_d_DT_minus_SL": 0.742,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "strategy_family",
+      "level": "COMPLIANCE",
+      "M_DT": 44.0,
+      "M_SL": 59.3,
+      "cohens_d_DT_minus_SL": -0.562,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "strategy_family",
+      "level": "COPING",
+      "M_DT": 1.6,
+      "M_SL": 0.7,
+      "cohens_d_DT_minus_SL": 0.271,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "strategy_family",
+      "level": "HELP",
+      "M_DT": 24.3,
+      "M_SL": 16.5,
+      "cohens_d_DT_minus_SL": 0.404,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "strategy_family",
+      "level": "JAILBREAKING",
+      "M_DT": 1.5,
+      "M_SL": 0.6,
+      "cohens_d_DT_minus_SL": 0.245,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "strategy_family",
+      "level": "NEGOTIATION",
+      "M_DT": 17.6,
+      "M_SL": 22.3,
+      "cohens_d_DT_minus_SL": -0.283,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "strategy_family",
+      "level": "RESISTANCE",
+      "M_DT": 11.0,
+      "M_SL": 0.6,
+      "cohens_d_DT_minus_SL": 1.114,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "task_engagement",
+      "level": "HIGH",
+      "M_DT": 73.2,
+      "M_SL": 94.4,
+      "cohens_d_DT_minus_SL": -1.014,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "task_engagement",
+      "level": "LOW",
+      "M_DT": 6.9,
+      "M_SL": 2.3,
+      "cohens_d_DT_minus_SL": 0.428,
+      "n_DT": 26,
+      "n_SL": 31
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "dimension": "task_engagement",
+      "level": "MEDIUM",
+      "M_DT": 19.9,
+      "M_SL": 3.3,
+      "cohens_d_DT_minus_SL": 1.141,
+      "n_DT": 26,
+      "n_SL": 31
+    }
+  ],
+  "provider_split": [
+    {
+      "dimension": "frustrated",
+      "cross-provider": 0.551,
+      "within anthropic": 0.748,
+      "within openai": 0.545
+    },
+    {
+      "dimension": "primary_strategy",
+      "cross-provider": 0.424,
+      "within anthropic": 0.521,
+      "within openai": 0.449
+    },
+    {
+      "dimension": "strategy_family",
+      "cross-provider": 0.437,
+      "within anthropic": 0.549,
+      "within openai": 0.464
+    },
+    {
+      "dimension": "task_engagement",
+      "cross-provider": 0.401,
+      "within anthropic": 0.605,
+      "within openai": 0.509
+    }
+  ],
+  "derived_metrics": [
+    {
+      "coder": "claude-sonnet-5",
+      "metric": "entropy",
+      "M_DT": 1.85,
+      "M_SL": 1.22,
+      "cohens_d": 0.998
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "metric": "turning_points",
+      "M_DT": 11.46,
+      "M_SL": 7.42,
+      "cohens_d": 0.563
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "metric": "resistance_pct",
+      "M_DT": 10.64,
+      "M_SL": 2.37,
+      "cohens_d": 1.021
+    },
+    {
+      "coder": "claude-sonnet-5",
+      "metric": "frustrated_pct",
+      "M_DT": 17.19,
+      "M_SL": 3.36,
+      "cohens_d": 1.361
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "metric": "entropy",
+      "M_DT": 1.61,
+      "M_SL": 1.29,
+      "cohens_d": 0.466
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "metric": "turning_points",
+      "M_DT": 11.08,
+      "M_SL": 9.03,
+      "cohens_d": 0.261
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "metric": "resistance_pct",
+      "M_DT": 10.94,
+      "M_SL": 7.44,
+      "cohens_d": 0.388
+    },
+    {
+      "coder": "gpt-5.6-terra",
+      "metric": "frustrated_pct",
+      "M_DT": 7.74,
+      "M_SL": 1.76,
+      "cohens_d": 0.672
+    },
+    {
+      "coder": "claude-opus-5",
+      "metric": "entropy",
+      "M_DT": 2.01,
+      "M_SL": 1.24,
+      "cohens_d": 1.08
+    },
+    {
+      "coder": "claude-opus-5",
+      "metric": "turning_points",
+      "M_DT": 11.54,
+      "M_SL": 7.06,
+      "cohens_d": 0.621
+    },
+    {
+      "coder": "claude-opus-5",
+      "metric": "resistance_pct",
+      "M_DT": 8.16,
+      "M_SL": 1.83,
+      "cohens_d": 0.849
+    },
+    {
+      "coder": "claude-opus-5",
+      "metric": "frustrated_pct",
+      "M_DT": 16.22,
+      "M_SL": 2.58,
+      "cohens_d": 1.127
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "metric": "entropy",
+      "M_DT": 1.61,
+      "M_SL": 1.14,
+      "cohens_d": 0.68
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "metric": "turning_points",
+      "M_DT": 11.0,
+      "M_SL": 8.74,
+      "cohens_d": 0.277
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "metric": "resistance_pct",
+      "M_DT": 12.07,
+      "M_SL": 8.12,
+      "cohens_d": 0.411
+    },
+    {
+      "coder": "gpt-5.6-sol",
+      "metric": "frustrated_pct",
+      "M_DT": 10.68,
+      "M_SL": 2.72,
+      "cohens_d": 0.835
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "metric": "entropy",
+      "M_DT": 1.96,
+      "M_SL": 1.19,
+      "cohens_d": 1.15
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "metric": "turning_points",
+      "M_DT": 12.38,
+      "M_SL": 7.58,
+      "cohens_d": 0.661
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "metric": "resistance_pct",
+      "M_DT": 10.99,
+      "M_SL": 0.63,
+      "cohens_d": 1.114
+    },
+    {
+      "coder": "gpt-4.1 (archived)",
+      "metric": "frustrated_pct",
+      "M_DT": 23.33,
+      "M_SL": 1.15,
+      "cohens_d": 1.44
+    }
+  ]
+}

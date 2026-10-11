@@ -1,0 +1,5 @@
+test,chi2,df,p,V,V_lo,V_hi,N
+strategy family x condition,127.517,5,8.007020000000001e-26,0.309408,0.217629,0.419092,1332
+engagement x condition,169.607,2,1.48005e-37,0.356837,0.183691,0.502826,1332
+jailbreaking subtype x condition,5.63889,2,0.0596391,0.440959,0.271163,0.688247,29
+emotion (multi-label) x condition,269.56,5,3.47814e-56,0.434626,0.320981,0.555446,1427

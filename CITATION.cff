@@ -1,16 +1,17 @@
 cff-version: 1.2.0
-message: If you use this software, please cite both the software and the paper below.
+message: If you use this software, please cite it as below, together with the article it accompanies.
 title: "Chatbot and analysis code for: The system's shadow"
 abstract: >-
   Chatbot application and analysis code for a laboratory experiment on how AI persona
   affects stress, dialogue behavior, and work quality: the two persona system prompts,
   the Streamlit chat interface that delivered them, the psychophysiological
   signal-processing pipeline and participant-level event-related analysis, the LLM dialogue-coding
-  pipeline, and the statistical analysis and figure scripts.
+  pipeline with the derivation of the reported dialogue measures and a cross-model re-coding, and
+  the statistical analysis and figure scripts.
 type: software
 license: Apache-2.0
-version: 1.1.0
-date-released: "2026-10-08"
+version: 1.2.0
+date-released: "2026-10-11"
 doi: 10.5281/zenodo.22060071
 identifiers:
   - type: doi
@@ -56,7 +57,7 @@ keywords:
   - AI persona
 references:
   - type: data
-    title: "Data for: The system's shadow: AI persona shapes stress, behavior, and work quality beyond self-report"
+    title: "Human-AI Persona Interaction Dataset: Chat Logs, Psychophysiology, and Survey Data from a Controlled Leadership Style Experiment"
     doi: 10.18150/IPGR44
     authors:
       - given-names: Leon

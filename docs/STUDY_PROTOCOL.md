@@ -47,7 +47,7 @@ Participants were instructed to:
 
 ### Independent Variable: Chatbot Leadership Style
 
-Participants were allocated to one of two AI chatbot conditions by a pre-specified alternating sequence (systematic alternation rather than randomisation; allocation was not concealed from the experimenter):
+Participants were allocated to one of two AI chatbot conditions through the laboratory's session calendar rather than by randomisation. Before recruitment began, each bookable session slot was assigned a condition, alternating along the sequence of slots; participants signed up for slots without knowing their condition. Because not every slot was booked or attended, the sessions actually run did not strictly alternate (30 Dark Triad and 33 Servant Leader sessions were run). Allocation was not concealed from the research team:
 
 #### Condition 1: Servant Leader (Group 1)
 A chatbot designed to simulate an inspiring, ethical, and high-performing leader with the following calibrated personality traits:
@@ -252,8 +252,7 @@ Participants were instructed to:
 #### 7. Debriefing (5-10 minutes)
 - Participant asked about general impressions of chatbot interaction (open-ended, without leading questions)
 - Comments recorded in log
-- Debriefing provided: "We understand our chatbot is not perfect and has communication difficulties. Chatbots in general are not yet ideal, and we apologize for any issues."
-- If participant inquired further: "The study examines how people collaborate with different types of bots acting as supervisors. We are investigating how different characteristics of these bots affect our emotions and task performance."
+- Debriefing provided: the participant was told that the study examines how people collaborate with chatbots acting as supervisors and how the chatbots' characteristics affect emotions and task performance, that the chatbot's interactional style had been deliberately designed for the study, and which of the two styles (supportive or antagonistic) they had worked with; the researcher apologised for any frustration the interaction had caused
 - Any unresolved concerns addressed with contact information for Prof. Przegalińska
 - Compensation distributed (participant choice of power bank or AI book; Perplexity Pro access sent via email)
 - Participant thanked and informed that individual results cannot be shared due to anonymity, but aggregate results will be available in the published article
@@ -637,7 +636,7 @@ All tests use the participant as the unit of analysis. Each participant's epochs
 
 #### Preliminary Analyses
 1. **Data Quality and Exclusions**: Summary of physiological data quality, conversation data completeness, and final analyzable sample by measure type
-2. **Baseline Equivalence**: Group comparisons on demographic variables, pre-task psychological measures, and baseline physiological levels, to check equivalence under the alternating allocation
+2. **Baseline Equivalence**: Group comparisons on demographic variables, pre-task psychological measures, and baseline physiological levels, to check equivalence under the slot-based allocation
 3. **Descriptive Statistics**: Overall sample characteristics, task completion rates, and interaction duration
 
 #### Self-Report Analyses
@@ -750,14 +749,13 @@ All tests use the participant as the unit of analysis. Each participant's epochs
 
 #### Interaction Characteristics
 - Total message count (participant and chatbot)
-- Conversation duration
-- Average message length (words/characters)
-- Response latency patterns
+- Conversation duration (first to last logged message)
+- Mean message length in characters (chatbot length excluding the fixed opening greeting)
 
 #### Strategy Diversity
-- **Entropy Analysis**: Shannon entropy of strategy distribution as measure of behavioral flexibility
-- **Turning Points**: Frequency of strategy switches indicating behavioral volatility
-- **Strategy Consistency**: Proportion of messages using dominant strategy
+- **Entropy Analysis**: Shannon entropy (bits) of each participant's distribution of messages over the 17 strategy subtypes, as a measure of behavioral flexibility
+- **Turning Points**: Number of switches in strategy family between consecutive participant messages, and the switching rate (switches divided by the number of message transitions), indicating behavioral volatility
+- Message counts, message lengths and condition are computed from the conversation logs, not taken from the coding model's own summaries
 
 #### Temporal Phase Definitions
 - **Early Phase**: First third of conversation messages
@@ -988,11 +986,11 @@ Keyword sentiment analysis with predefined dictionaries:
 
 ## Ethical Considerations
 
-- **Allocation**: Participants were allocated to conditions by a pre-specified alternating sequence
+- **Allocation**: Conditions were pre-assigned to session slots in alternating order before recruitment (not randomised)
 - **Ethical approval**: Research Ethics Committee (Komisja Etyki Badań) of Kozminski University, opinion of 8 December 2022
 - **Anonymity**: Data stored with participant IDs; no personally identifying information retained
 - **Informed Consent**: Written consent obtained from all participants prior to participation
 - **Right to Withdraw**: Participants informed they could withdraw at any time without penalty
-- **Incomplete disclosure and debriefing**: Participants were not told in advance that the chatbot's interactional style was experimentally assigned; the persona type was not disclosed until the debriefing at the end of the session (see Procedure, step 7)
+- **Incomplete disclosure and debriefing**: Participants were not told in advance that the chatbot's interactional style was experimentally assigned; at the debriefing at the end of the session every participant was told that the style had been deliberately designed and which style they had worked with (see Procedure, step 7)
 - **Participant Wellbeing**: Researcher monitored for signs of distress; breaks offered as needed; post-study support contact provided
 - **Data Protection**: Physiological and behavioral data analyzed separately and in combination; stored securely
